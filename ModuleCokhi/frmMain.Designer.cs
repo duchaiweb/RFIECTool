@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.txtSeriModule = new System.Windows.Forms.TextBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRead = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,13 +51,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtSeriModule
+            // txtSerial
             // 
-            this.txtSeriModule.Location = new System.Drawing.Point(47, 57);
-            this.txtSeriModule.MaxLength = 1000;
-            this.txtSeriModule.Name = "txtSeriModule";
-            this.txtSeriModule.Size = new System.Drawing.Size(100, 20);
-            this.txtSeriModule.TabIndex = 1;
+            this.txtSerial.Location = new System.Drawing.Point(47, 57);
+            this.txtSerial.MaxLength = 1000;
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(100, 20);
+            this.txtSerial.TabIndex = 1;
             // 
             // label1
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSeriModule);
+            this.Controls.Add(this.txtSerial);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -244,7 +244,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtSeriModule;
+        private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Label label2;

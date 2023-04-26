@@ -4,16 +4,47 @@ using System.Windows.Forms;
 using System.Data;
 using System.Diagnostics;
 using Microsoft.Win32;
-using System.Data.SqlClient;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Collections;
+
+using int8_t = System.SByte;
+using uint8_t = System.Byte;
+using uint16_t = System.UInt16;
+using uint32_t = System.UInt32;
+using int32_t = System.Int32;
+using uint64_t = System.UInt64;
 
 namespace RFIECTool
 {
     class MyLib
     {
+        public static Hashtable hGlobalConfig = new Hashtable();
+
+        // Lấy cấu hình từ db từ file
+        public static void ReadGlobalConfig()
+        {
+            string strPath = Path.Combine(GetAppPath(), "config.txt");
+            if (!File.Exists(strPath))
+            {
+                NoticeError("Thiếu file config.txt", "Lỗi");
+                Environment.Exit(1);
+            }
+
+            int equalIndex;
+            FileInfo config_f = new FileInfo(Path.Combine(GetAppPath(), "config.txt"));
+            foreach (string line in File.ReadAllLines(config_f.FullName))
+            {
+                if (line != string.Empty)
+                {
+                    equalIndex = line.IndexOf("=");
+                    hGlobalConfig[line.Substring(0, equalIndex)] = line.Substring(equalIndex + 1, line.Length - equalIndex - 1);
+                }
+            }
+        }
+
         // Lấy đường dẫn thư mục app
         public static string GetAppPath()
         {
@@ -163,7 +194,18 @@ namespace RFIECTool
                 IRow newRow = sheet.CreateRow(rowIndex);
                 for (int j = 0; j < tbl.Columns.Count; j++)
                 {
-                    newRow.CreateCell(j).SetCellValue(tbl.Rows[i][j].ToString());
+                    if (Int64.TryParse(tbl.Rows[i][j].ToString(), out Int64 n))
+                    {
+                        newRow.CreateCell(j).SetCellValue(Convert.ToInt64(tbl.Rows[i][j].ToString()));
+                    }
+                    else if (Double.TryParse(tbl.Rows[i][j].ToString(), out Double n1))
+                    {
+                        newRow.CreateCell(j).SetCellValue(Convert.ToDouble(tbl.Rows[i][j].ToString()));
+                    }
+                    else
+                    {
+                        newRow.CreateCell(j).SetCellValue(tbl.Rows[i][j].ToString());
+                    }
                 }
                 rowIndex++;
             }
@@ -277,12 +319,13 @@ namespace RFIECTool
             }
         }
 
-        // Kiểm tra là số
+        // Kiểm tra là dạng số
         public static bool IsNumeric(string value)
         {
             return Regex.IsMatch(value, @"^[+-]?\d*[.]?\d*$");
         }
 
+        // Chuyển IP sang mảng byte
         public static byte[] IPStringToBytes(string strIP)
         {
             char[] separator = new char[] { '.' };
@@ -301,11 +344,7 @@ namespace RFIECTool
             File.AppendAllText("debug.txt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " " + text + "\r\n");
         }
 
-        public static string TrimCom(string s)
-        {
-            return s.Trim(',');
-        }
-
+        // Xoá các dòng bị trùng của datatable
         public static DataTable GetDistinctSelf(DataTable SourceDt, string filedName)
         {
             for (int i = SourceDt.Rows.Count - 2; i > 0; i--)
@@ -318,6 +357,7 @@ namespace RFIECTool
             return SourceDt;
         }
 
+        // Định dạng ký tự gạch dọc phân tách
         public static string FormatSeparate(string s)
         {
             return s.Replace("||", "|").Replace("||", "|").Replace("||", "|").TrimStart('|');
@@ -339,7 +379,6 @@ namespace RFIECTool
                     uint decval = System.Convert.ToUInt32(hs, 16);
                     char character = System.Convert.ToChar(decval);
                     ascii += character;
-
                 }
 
                 return ascii;
@@ -349,17 +388,11 @@ namespace RFIECTool
             return string.Empty;
         }
 
-        // Chuyển chuỗi Ascii sang string hex OK => 4F 4B
-        public static string ASCIIToHexString(string ascii)
-        {
-            return BitConverter.ToString(ASCIIEncoding.ASCII.GetBytes(ascii)).Replace("-", " ");
-        }
-
         // Chuyển dãy chuỗi hexa đầu vào sang mảng byte
         public static byte[] HexStrToByteArr(string HexString)
         {
             string[] HexArray;
-            HexArray = HexString.Replace("-", " ").Split(' ');
+            HexArray = FormatHexString(HexString.Replace("-", " ")).Split(' ');
             int NumberChars = HexArray.Length;
             byte[] bytes = new byte[NumberChars];
             for (int i = 0; i < NumberChars; i++)
@@ -381,6 +414,16 @@ namespace RFIECTool
             if (s.Length > 0)
             {
                 return s.Substring(s.Length - 1, 1);
+            }
+            return "";
+        }
+
+        // Lấy số ký tự đầu tiên
+        public static string FirstChar(string s, int n)
+        {
+            if (s.Length >= n)
+            {
+                return s.Substring(0, n);
             }
             return "";
         }
@@ -448,23 +491,32 @@ namespace RFIECTool
             return number;
         }
 
-        // Chuyển string hex sang mảng byte
-        public static byte[] HexStringToArrByte(string str)
+        // Chuyển chuỗi Ascii sang string hex OK => 4F 4B
+        public static string ASCIIToHexString(string ascii)
         {
-            if (str == null)
-            {
-                return null;
-            }
-            str = str.Replace(" ", "");
+            return BitConverter.ToString(ASCIIEncoding.ASCII.GetBytes(ascii)).Replace("-", " ");
+        }
 
-            byte[] buffer = new byte[str.Length / 2];
-            int startIndex = 0;
-            for (int i = 0; startIndex < str.Length; i++)
+        // Set 0h Datetime
+        public static DateTime Set0h(DateTime dt)
+        {
+            return Convert.ToDateTime(dt.ToString("yyyy-MM-dd") + " 00:00:00");
+        }
+
+        // Định dạng frame hex
+        public static string FormatHexString(string hex)
+        {
+            string newHex = "";
+            hex = hex.Replace(" ", "");
+            for (int i = 0; i < hex.Length; i++)
             {
-                buffer[i] = MyLib.HexStringToByte(str.Substring(startIndex, 2));
-                startIndex += 2;
+                newHex += hex[i];
+                if (i % 2 == 1)
+                {
+                    newHex += " ";
+                }
             }
-            return buffer;
+            return newHex.Trim();
         }
 
         // Chuyển byte dạng string hex sang byte
@@ -528,6 +580,41 @@ namespace RFIECTool
             return num;
         }
 
+        // Chuyển string hex sang mảng byte
+        public static byte[] HexStringToArrByte(string str)
+        {
+            if (str == null)
+            {
+                return null;
+            }
+            str = str.Replace(" ", "");
+
+            byte[] buffer = new byte[str.Length / 2];
+            int startIndex = 0;
+            for (int i = 0; startIndex < str.Length; i++)
+            {
+                buffer[i] = MyLib.HexStringToByte(str.Substring(startIndex, 2));
+                startIndex += 2;
+            }
+            return buffer;
+        }
+
+        // Bật Bit của Byte
+        public static byte SetBit(byte value, byte bit)
+        {
+            byte result = value;
+            result |= (byte)((1 << (byte)bit));
+            return result;
+        }
+
+        // Xoá Bit của Byte
+        public static byte ClearBit(byte value, byte bit)
+        {
+            byte result = value;
+            result &= (byte)(~((1 << (byte)bit)));
+            return result;
+        }
+
         // Chuyển số sang hex theo số lượng n byte 60 => 3C 00 (n=2)
         public static string NumToNHex(string value, int n)
         {
@@ -540,20 +627,78 @@ namespace RFIECTool
             return result;
         }
 
-        // Định dạng frame hex
-        public static string FormatHexString(string hex)
+        // Tính số ngày liên quan
+        public static string TimeAgo(DateTime date)
         {
-            string newHex = "";
-            hex = hex.Replace(" ", "");
-            for (int i = 0; i < hex.Length; i++)
+            const int SECOND = 1;
+            const int MINUTE = 60 * SECOND;
+            const int HOUR = 60 * MINUTE;
+            const int DAY = 24 * HOUR;
+            const int MONTH = 30 * DAY;
+
+            var ts = new TimeSpan(DateTime.Now.Ticks - date.Ticks);
+            double delta = Math.Abs(ts.TotalSeconds);
+
+            if (delta < 1 * MINUTE)
+                return ts.Seconds == 1 ? "một giây trước" : ts.Seconds + " giây trước";
+
+            if (delta < 2 * MINUTE)
+                return "một phút trước";
+
+            if (delta < 45 * MINUTE)
+                return ts.Minutes + " phút trước";
+
+            if (delta < 90 * MINUTE)
+                return "một giờ trước";
+
+            if (delta < 24 * HOUR)
+                return ts.Hours + " giờ trước";
+
+            if (delta < 48 * HOUR)
+                return "hôm qua";
+
+            if (delta < 30 * DAY)
+                return ts.Days + " ngày trước";
+
+            if (delta < 12 * MONTH)
             {
-                newHex += hex[i];
-                if (i % 2 == 1)
-                {
-                    newHex += " ";
-                }
+                int months = Convert.ToInt32(Math.Floor((double)ts.Days / 30));
+                return months <= 1 ? "một tháng trước" : months + " tháng trước";
             }
-            return newHex.Trim();
+            else
+            {
+                int years = Convert.ToInt32(Math.Floor((double)ts.Days / 365));
+                return years <= 1 ? "một năm trước" : years + " năm trước";
+            }
+        }
+
+        // Cắt chuỗi không cắt từ thêm ...
+        public static string TruncateAtWord(string input, int length, bool appendDots = false)
+        {
+            if (input == null || input.Length < length)
+                return input;
+            var iNextSpace = input.LastIndexOf(" ", length, StringComparison.Ordinal);
+            var trimmedInput = string.Format("{0}", input.Substring(0, (iNextSpace > 0) ? iNextSpace : length).Trim());
+
+            if (appendDots)
+            {
+                return trimmedInput + "...";
+            }
+            return trimmedInput;
+        }
+
+        // Chuyển chuỗi số thành chuỗi có số thập phân '50.00' thành 50
+        public static string Str2Dub(string num, int digit)
+        {
+            try
+            {
+                double dNum = Convert.ToDouble(num);
+                return dNum.ToString("f" + digit.ToString());
+            }
+            catch
+            {
+                return num;
+            }
         }
     }
 }
