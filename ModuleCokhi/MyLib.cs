@@ -10,7 +10,7 @@ using NPOI.XSSF.UserModel;
 using System.Text.RegularExpressions;
 using System.Text;
 
-namespace WM03Soft
+namespace RFIECTool
 {
     class MyLib
     {
