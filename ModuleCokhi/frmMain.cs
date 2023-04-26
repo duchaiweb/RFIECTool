@@ -21,16 +21,17 @@ namespace RFIECTool
         delegate void ButtonEnableHandler();
         public List<string> dataList = new List<string>();
 
-        private string comName = "COM11";
+        private string comName = "";
         public string Serial = "";
 
         public int iIntervalTimer = 1000;   // 1s
-        public int iTimeoutCOM = 1; // số giây
+        public int iTimeoutCOM = 3; // số giây
         public int iCounterTimeout = 0;
         public bool bEnableCouter = false;
         public bool bTimeoutFlag = false;
 
         System.Timers.Timer myTimer = new System.Timers.Timer();
+
         private ManualResetEvent receiveDone = new ManualResetEvent(false);
         private string bBufferRecv = "";
         public DataTable dtResultFinal = new DataTable();
@@ -327,29 +328,39 @@ namespace RFIECTool
 
             if (radReadOBIS.Checked)
             {
-                DataRow drResultFinal = dtResultFinal.NewRow();
-                string sendHex = CreateFrame(txtOBISData.Text);
-                string strData = SendCOM(sendHex);
-
-                drResultFinal["#"] = (dtResultFinal.Rows.Count + 1).ToString();
-                drResultFinal["Time"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                drResultFinal["Send Frame"] = "<SOH>R1<STX>"+ txtOBISData.Text + "()<ETX><BCC>";
-                try
-                {
-
-                    drResultFinal["Recv Frame"] = "<STX>" + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(48, strData.Length-60))) + "<ETX><BCC>";
-                }
-                catch { }
-                drResultFinal["Send Hex"] = sendHex;
-                drResultFinal["Recv Hex"] = strData;
-
-                AddDgvLog(drResultFinal);
+                ReadData(txtOBISData.Text.Trim());
             }
             else if (radReadFromFile.Checked)
             {
-
+                foreach (string s in dataList)
+                {
+                    ReadData(s);
+                }
             }
             CloseCOM();
+
+            MyLib.NoticeInfo("Hoàn thành", "Thông tin");
+        }
+
+        public void ReadData(string data)
+        {
+            DataRow drResultFinal = dtResultFinal.NewRow();
+            string sendHex = CreateFrame(data);
+            string strData = SendCOM(sendHex);
+
+            drResultFinal["#"] = (dtResultFinal.Rows.Count + 1).ToString();
+            drResultFinal["Time"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            drResultFinal["Send Frame"] = "<SOH>R1<STX>" + data + "()<ETX><BCC>";
+            try
+            {
+
+                drResultFinal["Recv Frame"] = "<STX>" + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(48, strData.Length - 60))) + "<ETX><BCC>";
+            }
+            catch { }
+            drResultFinal["Send Hex"] = sendHex;
+            drResultFinal["Recv Hex"] = strData;
+
+            AddDgvLog(drResultFinal);
         }
 
         public void AddDgvLog(DataRow dr)

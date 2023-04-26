@@ -111,9 +111,9 @@
             // rtbOutput
             // 
             this.rtbOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbOutput.Location = new System.Drawing.Point(768, 12);
+            this.rtbOutput.Location = new System.Drawing.Point(854, 13);
             this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(281, 424);
+            this.rtbOutput.Size = new System.Drawing.Size(251, 482);
             this.rtbOutput.TabIndex = 17;
             this.rtbOutput.Text = "";
             // 
@@ -125,7 +125,7 @@
             this.dgvResult.Location = new System.Drawing.Point(9, 133);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowHeadersVisible = false;
-            this.dgvResult.Size = new System.Drawing.Size(753, 303);
+            this.dgvResult.Size = new System.Drawing.Size(839, 362);
             this.dgvResult.TabIndex = 18;
             // 
             // label3
@@ -155,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(396, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Dữ liệu";
+            this.label4.Text = "Obis";
             // 
             // txtOBISData
             // 
@@ -198,9 +198,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(396, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Từ file";
+            this.label5.Text = "Từ file txt";
             // 
             // btnBrowser
             // 
@@ -236,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 448);
+            this.ClientSize = new System.Drawing.Size(1117, 507);
             this.Controls.Add(this.btnSaveLog);
             this.Controls.Add(this.btnClearLog);
             this.Controls.Add(this.btnBrowser);
