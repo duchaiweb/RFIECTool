@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMeterType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOBISData = new System.Windows.Forms.TextBox();
             this.radReadOBIS = new System.Windows.Forms.RadioButton();
             this.radReadFromFile = new System.Windows.Forms.RadioButton();
             this.txtPath = new System.Windows.Forms.TextBox();
@@ -154,12 +154,12 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Dữ liệu";
             // 
-            // textBox1
+            // txtOBISData
             // 
-            this.textBox1.Location = new System.Drawing.Point(451, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 22;
+            this.txtOBISData.Location = new System.Drawing.Point(451, 57);
+            this.txtOBISData.Name = "txtOBISData";
+            this.txtOBISData.Size = new System.Drawing.Size(166, 20);
+            this.txtOBISData.TabIndex = 22;
             // 
             // radReadOBIS
             // 
@@ -217,7 +217,7 @@
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radReadOBIS);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOBISData);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbMeterType);
             this.Controls.Add(this.label3);
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMeterType;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOBISData;
         private System.Windows.Forms.RadioButton radReadOBIS;
         private System.Windows.Forms.RadioButton radReadFromFile;
         private System.Windows.Forms.TextBox txtPath;

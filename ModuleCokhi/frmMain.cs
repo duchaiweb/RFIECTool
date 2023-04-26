@@ -316,18 +316,9 @@ namespace RFIECTool
 
             OpenCOM(9600);
 
-            string strData = SendCOM("");
-
-            if (strData != "NACK")
+            if (radReadOBIS.Checked)
             {
-                string[] aBattay = strData.Split(' ');
-
-            }
-            else
-            {
-                displayLog("Bắt tay không thành công");
-                CloseCOM();
-                return;
+                string strData = SendCOM(CreateFrame(txtOBISData.Text));
             }
 
             CloseCOM();
@@ -418,7 +409,7 @@ namespace RFIECTool
             result += "16";
             result = "68 " + result;
 
-            return result;
+            return MyLib.FormatHexString(result);
         }
     }
 }
