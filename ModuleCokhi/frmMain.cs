@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
@@ -410,6 +411,28 @@ namespace RFIECTool
             result = "68 " + result;
 
             return MyLib.FormatHexString(result);
+        }
+
+        private void btnClearLog_Click(object sender, EventArgs e)
+        {
+            dgvResult.DataSource = null;
+        }
+
+        private void btnSaveLog_Click(object sender, EventArgs e)
+        {
+            DataTable data = (DataTable)(dgvResult.DataSource);
+
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Title = "Save";
+            saveDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string file = saveDialog.FileName;
+                MyLib.ExportToExcel(data, file);
+                GC.Collect();
+                MyLib.NoticeInfo("Hoàn thành!", "Thông báo");
+            }
+            GC.Collect();
         }
     }
 }

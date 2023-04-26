@@ -48,6 +48,8 @@
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBrowser = new System.Windows.Forms.Button();
+            this.btnClearLog = new System.Windows.Forms.Button();
+            this.btnSaveLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,11 +209,33 @@
             this.btnBrowser.UseVisualStyleBackColor = true;
             this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
+            // btnClearLog
+            // 
+            this.btnClearLog.Location = new System.Drawing.Point(351, 15);
+            this.btnClearLog.Name = "btnClearLog";
+            this.btnClearLog.Size = new System.Drawing.Size(75, 23);
+            this.btnClearLog.TabIndex = 28;
+            this.btnClearLog.Text = "Xoá Log";
+            this.btnClearLog.UseVisualStyleBackColor = true;
+            this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
+            // 
+            // btnSaveLog
+            // 
+            this.btnSaveLog.Location = new System.Drawing.Point(432, 15);
+            this.btnSaveLog.Name = "btnSaveLog";
+            this.btnSaveLog.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLog.TabIndex = 29;
+            this.btnSaveLog.Text = "Lưu Log";
+            this.btnSaveLog.UseVisualStyleBackColor = true;
+            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 448);
+            this.Controls.Add(this.btnSaveLog);
+            this.Controls.Add(this.btnClearLog);
             this.Controls.Add(this.btnBrowser);
             this.Controls.Add(this.radReadFromFile);
             this.Controls.Add(this.txtPath);
@@ -262,6 +286,8 @@
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBrowser;
+        private System.Windows.Forms.Button btnClearLog;
+        private System.Windows.Forms.Button btnSaveLog;
     }
 }
 
