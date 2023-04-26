@@ -38,10 +38,17 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResult = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmbMeterType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radReadOBIS = new System.Windows.Forms.RadioButton();
+            this.radReadFromFile = new System.Windows.Forms.RadioButton();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBrowser = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSeriModule
@@ -108,13 +115,13 @@
             this.rtbOutput.TabIndex = 17;
             this.rtbOutput.Text = "";
             // 
-            // dataGridView1
+            // dgvResult
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 339);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResult.Location = new System.Drawing.Point(9, 133);
+            this.dgvResult.Name = "dgvResult";
+            this.dgvResult.Size = new System.Drawing.Size(753, 303);
+            this.dgvResult.TabIndex = 18;
             // 
             // label3
             // 
@@ -125,27 +132,96 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Kiểu công tơ";
             // 
-            // comboBox1
+            // cmbMeterType
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbMeterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMeterType.FormattingEnabled = true;
+            this.cmbMeterType.Items.AddRange(new object[] {
             "CE-18",
             "ME-40",
             "ME-42"});
-            this.comboBox1.Location = new System.Drawing.Point(235, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
+            this.cmbMeterType.Location = new System.Drawing.Point(235, 57);
+            this.cmbMeterType.Name = "cmbMeterType";
+            this.cmbMeterType.Size = new System.Drawing.Size(121, 21);
+            this.cmbMeterType.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(396, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Dữ liệu";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(451, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 20);
+            this.textBox1.TabIndex = 22;
+            // 
+            // radReadOBIS
+            // 
+            this.radReadOBIS.AutoSize = true;
+            this.radReadOBIS.Checked = true;
+            this.radReadOBIS.Location = new System.Drawing.Point(377, 61);
+            this.radReadOBIS.Name = "radReadOBIS";
+            this.radReadOBIS.Size = new System.Drawing.Size(14, 13);
+            this.radReadOBIS.TabIndex = 23;
+            this.radReadOBIS.TabStop = true;
+            this.radReadOBIS.UseVisualStyleBackColor = true;
+            // 
+            // radReadFromFile
+            // 
+            this.radReadFromFile.AutoSize = true;
+            this.radReadFromFile.Location = new System.Drawing.Point(377, 96);
+            this.radReadFromFile.Name = "radReadFromFile";
+            this.radReadFromFile.Size = new System.Drawing.Size(14, 13);
+            this.radReadFromFile.TabIndex = 26;
+            this.radReadFromFile.UseVisualStyleBackColor = true;
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(451, 92);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(166, 20);
+            this.txtPath.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(396, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Từ file";
+            // 
+            // btnBrowser
+            // 
+            this.btnBrowser.Location = new System.Drawing.Point(623, 91);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowser.TabIndex = 27;
+            this.btnBrowser.Text = "Chọn";
+            this.btnBrowser.UseVisualStyleBackColor = true;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 448);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnBrowser);
+            this.Controls.Add(this.radReadFromFile);
+            this.Controls.Add(this.txtPath);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.radReadOBIS);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbMeterType);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvResult);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbPortList);
@@ -160,7 +236,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RFIECTool";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,9 +252,16 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMeterType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radReadOBIS;
+        private System.Windows.Forms.RadioButton radReadFromFile;
+        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBrowser;
     }
 }
 

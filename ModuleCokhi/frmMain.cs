@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
@@ -17,9 +18,9 @@ namespace RFIECTool
         private preventCrossThreadingString updateOutputThread;
         private SerialPort myPort = new SerialPort();
         delegate void ButtonEnableHandler();
+        public List<string> dataList = new List<string>();
 
         private string comName = "COM11";
-        private string strF_Battay_WM03 = "1F 2F 3F FF 01";
         public string Serial = "";
 
         public int iIntervalTimer = 1000;   // 1s
@@ -214,6 +215,8 @@ namespace RFIECTool
                     cmbPortList.Items.Add(new { Text = ports[i], Value = ports[i] });
                 }
             }
+
+            cmbMeterType.Text = "CE-18";
         }
 
         public void port_SendData(string sendForm)
@@ -313,47 +316,12 @@ namespace RFIECTool
 
             OpenCOM(9600);
 
-            string strData = SendCOM(strF_Battay_WM03);
+            string strData = SendCOM("");
 
             if (strData != "NACK")
             {
                 string[] aBattay = strData.Split(' ');
-                if (aBattay.Length >= 5 && aBattay[4] == "02")
-                {
-                    string sDeviceSerialHex = aBattay[5] + aBattay[6] + aBattay[7] + aBattay[8] + aBattay[9] + aBattay[10];
-                    string key = secretKey + crc_16(MyLib.HexStringToArrByte(sDeviceSerialHex.Replace(" ", ""))).ToString("X2").PadLeft(4, '0');
-                    byte[] bKey = MyLib.HexStringToArrByte(key.Replace(" ", ""));
 
-                    string sSendData = "1F 2F 3F FF 03 ";
-                    string sCommand = "82 ";
-
-                    byte[] bData = MyLib.HexStringToArrByte(sCommand.Replace(" ", ""));
-
-                    sSendData += MyLib.ByteArrToHexString(clsAES128_WM03.aes_128_en(bData, bKey));
-                    sSendData += crc_16(MyLib.HexStringToArrByte(sSendData.Replace(" ", ""))).ToString("X2").PadLeft(4, '0');
-                    sSendData = sSendData.Replace(" ", "");
-                    strData = SendCOM(sSendData);
-                    if (strData != "NACK")
-                    {
-                        string[] aData = strData.Split(' ');
-                        string enData = "";
-                        for (int i = 5; i < aData.Length - 2; i++)
-                        {
-                            enData += aData[i];
-                        }
-                        bData = MyLib.HexStringToArrByte(enData.Replace(" ", ""));
-                        string recData = MyLib.ByteArrToHexString(clsAES128_WM03.aes_128_dec(bData, bKey));
-                        enData = recData[10].ToString() + recData[11].ToString() + recData[8].ToString() + recData[9].ToString() + recData[6].ToString() + recData[7].ToString() + recData[4].ToString() + recData[5].ToString() + recData[2].ToString() + recData[3].ToString() + recData[0].ToString() + recData[1].ToString();
-
-                        txtSeriModule.Text = enData.TrimStart('0');
-                    }
-                }
-                else
-                {
-                    displayLog("Bắt tay lỗi");
-                    CloseCOM();
-                    return;
-                }
             }
             else
             {
@@ -363,6 +331,47 @@ namespace RFIECTool
             }
 
             CloseCOM();
+        }
+
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                Title = "Browse txt File",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "txt",
+                Filter = "Text File|*.txt;",
+                FilterIndex = 2,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtPath.Text = openFileDialog1.FileName;
+            }
+
+            ReadDataList();
+        }
+
+        public void ReadDataList()
+        {
+            dataList.Clear();
+            string strPath = txtPath.Text;
+
+            FileInfo config_f = new FileInfo(strPath);
+            foreach (string line in File.ReadAllLines(config_f.FullName))
+            {
+                if (line != string.Empty)
+                {
+                    dataList.Add(line);
+                }
+            }
         }
     }
 }
