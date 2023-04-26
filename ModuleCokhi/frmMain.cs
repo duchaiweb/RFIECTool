@@ -33,6 +33,7 @@ namespace RFIECTool
         System.Timers.Timer myTimer = new System.Timers.Timer();
         private ManualResetEvent receiveDone = new ManualResetEvent(false);
         private string bBufferRecv = "";
+        public DataTable dtResultFinal = new DataTable();
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -207,6 +208,13 @@ namespace RFIECTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dtResultFinal.Columns.Add("#");
+            dtResultFinal.Columns.Add("Time");
+            dtResultFinal.Columns.Add("Send Frame");
+            dtResultFinal.Columns.Add("Recv Frame");
+            dtResultFinal.Columns.Add("Send Hex");
+            dtResultFinal.Columns.Add("Recv Hex");
+
             if (ports.Length > 0)
             {
                 for (int i = 0; i < ports.Length; i++)
@@ -319,10 +327,36 @@ namespace RFIECTool
 
             if (radReadOBIS.Checked)
             {
-                string strData = SendCOM(CreateFrame(txtOBISData.Text));
-            }
+                DataRow drResultFinal = dtResultFinal.NewRow();
+                string sendHex = CreateFrame(txtOBISData.Text);
+                string strData = SendCOM(sendHex);
 
+                drResultFinal["#"] = (dtResultFinal.Rows.Count + 1).ToString();
+                drResultFinal["Time"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                drResultFinal["Send Frame"] = "<SOH>R1<STX>"+ txtOBISData.Text + "()<ETX><BCC>";
+                try
+                {
+
+                    drResultFinal["Recv Frame"] = "<STX>" + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(48, strData.Length-60))) + "<ETX><BCC>";
+                }
+                catch { }
+                drResultFinal["Send Hex"] = sendHex;
+                drResultFinal["Recv Hex"] = strData;
+
+                AddDgvLog(drResultFinal);
+            }
+            else if (radReadFromFile.Checked)
+            {
+
+            }
             CloseCOM();
+        }
+
+        public void AddDgvLog(DataRow dr)
+        {
+            dtResultFinal.Rows.InsertAt(dr, 0);
+            dgvResult.DataSource = dtResultFinal;
+            Application.DoEvents();
         }
 
         private void btnBrowser_Click(object sender, EventArgs e)
@@ -416,6 +450,7 @@ namespace RFIECTool
         private void btnClearLog_Click(object sender, EventArgs e)
         {
             dgvResult.DataSource = null;
+            dtResultFinal.Clear();
         }
 
         private void btnSaveLog_Click(object sender, EventArgs e)
