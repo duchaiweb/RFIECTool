@@ -13,8 +13,7 @@ namespace RFIECTool
 {
     public partial class frmMain : Form
     {
-        public SerialPort port;
-        public string[] ports = SerialPort.GetPortNames();
+        public string[] aPorts = SerialPort.GetPortNames();
         private delegate void preventCrossThreadingString(string x);
         private preventCrossThreadingString updateOutputThread;
         private SerialPort myPort = new SerialPort();
@@ -128,7 +127,7 @@ namespace RFIECTool
 
             displayLog("Send: " + MyLib.FormatHexString(strData));
 
-            byte[] bufferOBIS = HexString2Bytes(strData.Replace(" ", ""));
+            byte[] bufferOBIS = MyLib.HexStringToArrByte(strData);
 
             try
             {
@@ -161,46 +160,6 @@ namespace RFIECTool
             return str;
         }
 
-        public string ConvertHex(string hexString)
-        {
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                string[] a = hexString.Trim().Split(new char[] { ' ' });
-                foreach (var h in a)
-                {
-                    sb.Append((char)int.Parse(h, System.Globalization.NumberStyles.HexNumber));
-                }
-                return sb.ToString();
-            }
-            catch { }
-
-            return string.Empty;
-        }
-
-        private byte[] HexString2Bytes(string hexStr)
-        {
-            string hexString = hexStr.ToUpper();
-            hexString = hexString.Replace(" ", "");
-
-            if (hexString == null) return null;
-
-            int len = hexString.Length;
-            if (len % 2 == 1) return null;
-            int len_half = len / 2;
-
-            byte[] bs = new byte[len_half];
-            try
-            {
-                for (int i = 0; i != len_half; i++)
-                {
-                    bs[i] = (byte)Int32.Parse(hexString.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
-                }
-            }
-            catch { }
-            return bs;
-        }
-
         public frmMain()
         {
             InitializeComponent();
@@ -216,13 +175,13 @@ namespace RFIECTool
             dtResultFinal.Columns.Add("Send Hex");
             dtResultFinal.Columns.Add("Recv Hex");
 
-            if (ports.Length > 0)
+            if (aPorts.Length > 0)
             {
-                for (int i = 0; i < ports.Length; i++)
+                for (int i = 0; i < aPorts.Length; i++)
                 {
                     cmbPortList.DisplayMember = "Text";
                     cmbPortList.ValueMember = "Value";
-                    cmbPortList.Items.Add(new { Text = ports[i], Value = ports[i] });
+                    cmbPortList.Items.Add(new { Text = aPorts[i], Value = aPorts[i] });
                 }
             }
 
@@ -230,29 +189,18 @@ namespace RFIECTool
             cmbTimeout.Text = "3";
         }
 
-        public void port_SendData(string sendForm)
-        {
-            byte[] bytestosend;
-            bytestosend = MyLib.HexStrToByteArr(sendForm);
-            port.Write(bytestosend, 0, bytestosend.Length);
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            ports = SerialPort.GetPortNames();
+            aPorts = SerialPort.GetPortNames();
             cmbPortList.Items.Clear();
-            try
+
+            if (aPorts.Length > 0)
             {
-                port.Close();
-            }
-            catch { }
-            if (ports.Length > 0)
-            {
-                for (int i = 0; i < ports.Length; i++)
+                for (int i = 0; i < aPorts.Length; i++)
                 {
                     cmbPortList.DisplayMember = "Text";
                     cmbPortList.ValueMember = "Value";
-                    cmbPortList.Items.Add(new { Text = ports[i], Value = ports[i] });
+                    cmbPortList.Items.Add(new { Text = aPorts[i], Value = aPorts[i] });
                 }
             }
         }
