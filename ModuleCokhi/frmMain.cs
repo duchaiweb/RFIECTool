@@ -25,7 +25,7 @@ namespace RFIECTool
         public string Serial = "";
 
         public int iIntervalTimer = 1000;   // 1s
-        public int iTimeoutCOM = 3; // số giây
+        public static int iTimeoutCOM = 3; // số giây
         public int iCounterTimeout = 0;
         public bool bEnableCouter = false;
         public bool bTimeoutFlag = false;
@@ -227,6 +227,7 @@ namespace RFIECTool
             }
 
             cmbMeterType.Text = "CE-18";
+            cmbTimeout.Text = "3";
         }
 
         public void port_SendData(string sendForm)
@@ -479,6 +480,11 @@ namespace RFIECTool
                 MyLib.NoticeInfo("Hoàn thành!", "Thông báo");
             }
             GC.Collect();
+        }
+
+        private void cmbTimeout_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            iTimeoutCOM = Convert.ToInt32(cmbTimeout.Text);
         }
     }
 }

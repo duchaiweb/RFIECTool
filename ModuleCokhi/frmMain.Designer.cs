@@ -50,12 +50,14 @@
             this.btnBrowser = new System.Windows.Forms.Button();
             this.btnClearLog = new System.Windows.Forms.Button();
             this.btnSaveLog = new System.Windows.Forms.Button();
+            this.cmbTimeout = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSerial
             // 
-            this.txtSerial.Location = new System.Drawing.Point(47, 57);
+            this.txtSerial.Location = new System.Drawing.Point(52, 57);
             this.txtSerial.MaxLength = 1000;
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Size = new System.Drawing.Size(100, 20);
@@ -72,7 +74,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(264, 16);
+            this.btnRead.Location = new System.Drawing.Point(264, 15);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(72, 23);
             this.btnRead.TabIndex = 3;
@@ -83,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 21);
+            this.label2.Location = new System.Drawing.Point(9, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -93,14 +95,14 @@
             // 
             this.cmbPortList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPortList.FormattingEnabled = true;
-            this.cmbPortList.Location = new System.Drawing.Point(47, 17);
+            this.cmbPortList.Location = new System.Drawing.Point(52, 16);
             this.cmbPortList.Name = "cmbPortList";
             this.cmbPortList.Size = new System.Drawing.Size(100, 21);
             this.cmbPortList.TabIndex = 6;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(165, 16);
+            this.btnRefresh.Location = new System.Drawing.Point(167, 15);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(84, 23);
             this.btnRefresh.TabIndex = 7;
@@ -131,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 61);
+            this.label3.Location = new System.Drawing.Point(164, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 19;
@@ -145,15 +147,15 @@
             "CE-18",
             "ME-40",
             "ME-42"});
-            this.cmbMeterType.Location = new System.Drawing.Point(235, 57);
+            this.cmbMeterType.Location = new System.Drawing.Point(247, 57);
             this.cmbMeterType.Name = "cmbMeterType";
-            this.cmbMeterType.Size = new System.Drawing.Size(121, 21);
+            this.cmbMeterType.Size = new System.Drawing.Size(104, 21);
             this.cmbMeterType.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(396, 61);
+            this.label4.Location = new System.Drawing.Point(391, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 21;
@@ -161,7 +163,7 @@
             // 
             // txtOBISData
             // 
-            this.txtOBISData.Location = new System.Drawing.Point(451, 57);
+            this.txtOBISData.Location = new System.Drawing.Point(446, 57);
             this.txtOBISData.Name = "txtOBISData";
             this.txtOBISData.Size = new System.Drawing.Size(166, 20);
             this.txtOBISData.TabIndex = 22;
@@ -170,7 +172,7 @@
             // 
             this.radReadOBIS.AutoSize = true;
             this.radReadOBIS.Checked = true;
-            this.radReadOBIS.Location = new System.Drawing.Point(377, 61);
+            this.radReadOBIS.Location = new System.Drawing.Point(372, 61);
             this.radReadOBIS.Name = "radReadOBIS";
             this.radReadOBIS.Size = new System.Drawing.Size(14, 13);
             this.radReadOBIS.TabIndex = 23;
@@ -180,7 +182,7 @@
             // radReadFromFile
             // 
             this.radReadFromFile.AutoSize = true;
-            this.radReadFromFile.Location = new System.Drawing.Point(377, 96);
+            this.radReadFromFile.Location = new System.Drawing.Point(372, 96);
             this.radReadFromFile.Name = "radReadFromFile";
             this.radReadFromFile.Size = new System.Drawing.Size(14, 13);
             this.radReadFromFile.TabIndex = 26;
@@ -188,7 +190,7 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(451, 92);
+            this.txtPath.Location = new System.Drawing.Point(446, 92);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(166, 20);
             this.txtPath.TabIndex = 25;
@@ -196,7 +198,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(396, 96);
+            this.label5.Location = new System.Drawing.Point(391, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 24;
@@ -204,7 +206,7 @@
             // 
             // btnBrowser
             // 
-            this.btnBrowser.Location = new System.Drawing.Point(623, 91);
+            this.btnBrowser.Location = new System.Drawing.Point(618, 91);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(75, 23);
             this.btnBrowser.TabIndex = 27;
@@ -232,11 +234,38 @@
             this.btnSaveLog.UseVisualStyleBackColor = true;
             this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
             // 
+            // cmbTimeout
+            // 
+            this.cmbTimeout.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTimeout.FormattingEnabled = true;
+            this.cmbTimeout.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "8"});
+            this.cmbTimeout.Location = new System.Drawing.Point(247, 91);
+            this.cmbTimeout.Name = "cmbTimeout";
+            this.cmbTimeout.Size = new System.Drawing.Size(104, 21);
+            this.cmbTimeout.TabIndex = 30;
+            this.cmbTimeout.SelectedIndexChanged += new System.EventHandler(this.cmbTimeout_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(164, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Timeout(s)";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 507);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbTimeout);
             this.Controls.Add(this.btnSaveLog);
             this.Controls.Add(this.btnClearLog);
             this.Controls.Add(this.btnBrowser);
@@ -291,6 +320,8 @@
         private System.Windows.Forms.Button btnBrowser;
         private System.Windows.Forms.Button btnClearLog;
         private System.Windows.Forms.Button btnSaveLog;
+        private System.Windows.Forms.ComboBox cmbTimeout;
+        private System.Windows.Forms.Label label6;
     }
 }
 
