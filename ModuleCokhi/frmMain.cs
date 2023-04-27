@@ -461,9 +461,13 @@ namespace RFIECTool
 
         private void btnClearLog_Click(object sender, EventArgs e)
         {
-            rtbOutput.Clear();
-            dgvResult.DataSource = null;
-            dtResultFinal.Clear();
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn xóa log?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                rtbOutput.Clear();
+                dgvResult.DataSource = null;
+                dtResultFinal.Clear();
+            }
         }
 
         private void btnSaveLog_Click(object sender, EventArgs e)
