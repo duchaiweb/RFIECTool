@@ -461,6 +461,7 @@ namespace RFIECTool
 
         private void btnClearLog_Click(object sender, EventArgs e)
         {
+            rtbOutput.Clear();
             dgvResult.DataSource = null;
             dtResultFinal.Clear();
         }
