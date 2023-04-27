@@ -340,7 +340,13 @@ namespace RFIECTool
             }
             CloseCOM();
 
-            MyLib.NoticeInfo("Hoàn thành", "Thông tin");
+            // Lưu log
+            DataTable data = (DataTable)(dgvResult.DataSource);
+            string pathExcel = Path.Combine(MyLib.GetAppPath(), @"Logs\" + DateTime.Now.ToString("yyyy-MM-dd") + @"\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xlsx");
+            MyLib.ExportToExcel(data, pathExcel);
+            GC.Collect();
+
+            MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
         }
 
         public void ReadData(string data)
@@ -433,26 +439,20 @@ namespace RFIECTool
             result += "00 "; // sequence
 
             string hexData = "";
-            hexData += "01 "; // soh
             hexData += "52 31 "; // r1
             hexData += "02 "; // stx
             hexData += MyLib.ASCIIToHexString(data) + " ";   // data
             hexData += "28 29 "; // ()
             hexData += "03 "; // etx
-            hexData += "5B "; // bcc
+            hexData += MyLib.CRCXor(hexData) + " ";   // bcc
+            hexData = "01 " + hexData; // soh
 
             result += MyLib.FormatHexString((hexData.Replace(" ", "").Length / 2).ToString("X4")) + " ";  // length data
             result += hexData;
             result = MyLib.FormatHexString((16 + hexData.Replace(" ", "").Length / 2).ToString("X4")) + " " + result;  // length frame
             result = MyLib.FormatHexString(result);
-
-            string[] arrTempString = result.ToUpper().Split(' ');
-            byte crc = (byte)(Convert.ToByte(arrTempString[0], 16) ^ Convert.ToByte(arrTempString[1], 16));
-            for (int i = 2; i < arrTempString.Length; i++)
-            {
-                crc = (byte)(crc ^ Convert.ToByte(arrTempString[i], 16));
-            }
-            result += crc.ToString("X2") + " ";   // crc
+            
+            result += MyLib.CRCXor(result) + " ";   // crc
             result += "16";
             result = "68 " + result;
 

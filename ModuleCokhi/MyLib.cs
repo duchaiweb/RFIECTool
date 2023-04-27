@@ -744,5 +744,19 @@ namespace RFIECTool
             }
             GC.Collect();
         }
+
+        // Tính crc theo phép XOR
+        public static string CRCXor(string hex)
+        {
+            hex = FormatHexString(hex);
+            string[] arrTempString = hex.ToUpper().Split(' ');
+            if (arrTempString.Length < 2) return "";
+            byte crc = (byte)(Convert.ToByte(arrTempString[0], 16) ^ Convert.ToByte(arrTempString[1], 16));
+            for (int i = 2; i < arrTempString.Length; i++)
+            {
+                crc = (byte)(crc ^ Convert.ToByte(arrTempString[i], 16));
+            }
+            return crc.ToString("X2");
+        }
     }
 }
