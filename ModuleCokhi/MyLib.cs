@@ -143,6 +143,31 @@ namespace RFIECTool
             catch { }
         }
 
+        // Xoá các thư mục log quá 30 ngày
+        public void ClearOldLogFolder()
+        {
+            DirectoryInfo di = new DirectoryInfo(Path.Combine(MyLib.GetAppPath(), @"Logs\"));
+
+            if (Directory.Exists(di.FullName))
+            {
+                foreach (DirectoryInfo dir in di.GetDirectories())
+                {
+                    if (DateTime.Compare(dir.LastWriteTime, DateTime.Now.AddDays(-30)) < 0)
+                    {
+                        foreach (FileInfo file in dir.GetFiles())
+                        {
+                            file.Delete();
+                        }
+                        dir.Delete(true);
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(di.FullName);
+            }
+        }
+
         // Kiểm tra serial trong dải
         public static bool CheckSerialInRange(string strSerial, string strRange)
         {
@@ -178,6 +203,7 @@ namespace RFIECTool
         // Xuất dữ liệu ra file Excel
         public static void ExportToExcel(DataTable tbl, string excelFilePath)
         {
+            if (tbl == null || tbl.Columns == null) return;
             XSSFWorkbook wb = new XSSFWorkbook();
             ISheet sheet = wb.CreateSheet();
             IRow row0 = sheet.CreateRow(0);
@@ -687,7 +713,7 @@ namespace RFIECTool
             return trimmedInput;
         }
 
-        // Chuyển chuỗi số thành chuỗi có số thập phân '50.00' thành 50
+        // Chuyển chuỗi số thành chuỗi có số thập phân '50.00' thành 50, thường dùng do kiểu decimal của sql server
         public static string Str2Dub(string num, int digit)
         {
             try
@@ -699,6 +725,24 @@ namespace RFIECTool
             {
                 return num;
             }
+        }
+
+        // Xuất kết quả Datagridview ra file Excel
+        public static void ExportDgvToExcel(DataGridView dgvResult)
+        {
+            DataTable data = (DataTable)(dgvResult.DataSource);
+
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Title = "Save";
+            saveDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string file = saveDialog.FileName;
+                ExportToExcel(data, file);
+                GC.Collect();
+                NoticeInfo("Hoàn thành!", "Thông báo");
+            }
+            GC.Collect();
         }
     }
 }

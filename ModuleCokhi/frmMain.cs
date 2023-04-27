@@ -468,19 +468,7 @@ namespace RFIECTool
 
         private void btnSaveLog_Click(object sender, EventArgs e)
         {
-            DataTable data = (DataTable)(dgvResult.DataSource);
-
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Title = "Save";
-            saveDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                string file = saveDialog.FileName;
-                MyLib.ExportToExcel(data, file);
-                GC.Collect();
-                MyLib.NoticeInfo("Hoàn thành!", "Thông báo");
-            }
-            GC.Collect();
+            MyLib.ExportDgvToExcel(dgvResult);
         }
 
         private void cmbTimeout_SelectedIndexChanged(object sender, EventArgs e)
