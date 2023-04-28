@@ -217,19 +217,13 @@ namespace RFIECTool
 
             comName = cmbPortList.Text;
 
-            try
-            {
-                myPort.PortName = comName;
-                myPort.Parity = Parity.None;
-                myPort.StopBits = StopBits.One;
-                myPort.BaudRate = 9600;
-                myPort.DataBits = 8;
-                myPort.DtrEnable = true;
-                myPort.RtsEnable = true;
-            }
-            catch
-            {
-            }
+            myPort.PortName = comName;
+            myPort.Parity = Parity.None;
+            myPort.StopBits = StopBits.One;
+            myPort.BaudRate = 9600;
+            myPort.DataBits = 8;
+            myPort.DtrEnable = true;
+            myPort.RtsEnable = true;
 
             return true;
         }
@@ -305,11 +299,10 @@ namespace RFIECTool
 
             drResultFinal["#"] = (dtResultFinal.Rows.Count + 1).ToString();
             drResultFinal["Time"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            drResultFinal["Send Frame"] = "<SOH>R1<STX>" + data + "()<ETX><BCC>";
+            drResultFinal["Send Frame"] = data + "()";
             try
             {
-
-                drResultFinal["Recv Frame"] = "<STX>" + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(48, strData.Length - 60))) + "<ETX><BCC>";
+                drResultFinal["Recv Frame"] = MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(42, strData.Length - 48)));
             }
             catch { }
             drResultFinal["Send Hex"] = sendHex;
@@ -387,13 +380,8 @@ namespace RFIECTool
             result += "00 "; // sequence
 
             string hexData = "";
-            hexData += "52 31 "; // r1
-            hexData += "02 "; // stx
             hexData += MyLib.ASCIIToHexString(data) + " ";   // data
             hexData += "28 29 "; // ()
-            hexData += "03 "; // etx
-            hexData += MyLib.CRCXor(hexData) + " ";   // bcc
-            hexData = "01 " + hexData; // soh
 
             result += MyLib.FormatHexString((hexData.Replace(" ", "").Length / 2).ToString("X4")) + " ";  // length data
             result += hexData;
