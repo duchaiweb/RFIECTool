@@ -104,10 +104,11 @@ namespace RFIECTool
                 myPort.Close();
                 myPort.BaudRate = iBaudRate;
                 myPort.Open();
+                displayLog("Mở " + comName + " thành công");
             }
             catch
             {
-                displayLog("Không thể mở cổng " + comName);
+                displayLog("Mở" + comName + " lỗi");
                 return;
             }
         }
@@ -149,6 +150,8 @@ namespace RFIECTool
 
             if (bBufferRecv == "")
             {
+                StopCounterTimer();
+                SetEventFlag(true);
                 displayLog("Hết thời gian chờ");
                 return "NACK";
             }
@@ -217,7 +220,11 @@ namespace RFIECTool
 
             comName = cmbPortList.Text;
 
-            myPort.PortName = comName;
+            if (!myPort.IsOpen)
+            {
+                myPort.PortName = comName;
+            }
+            
             myPort.Parity = Parity.None;
             myPort.StopBits = StopBits.One;
             myPort.BaudRate = 9600;
@@ -241,7 +248,7 @@ namespace RFIECTool
             else
             {
                 Color textColor = new Color();
-                if (msg.IndexOf("Send") > -1)
+                if (msg.IndexOf("Send") > -1 || msg.IndexOf("thành công") > -1)
                 {
                     textColor = Color.Blue;
                 }
@@ -265,10 +272,6 @@ namespace RFIECTool
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            if (!checkCom()) return;
-
-            OpenCOM(9600);
-
             if (radReadOBIS.Checked)
             {
                 ReadData(txtOBISData.Text.Trim());
@@ -280,7 +283,6 @@ namespace RFIECTool
                     ReadData(s);
                 }
             }
-            CloseCOM();
 
             // Lưu log
             DataTable data = (DataTable)(dgvResult.DataSource);
@@ -414,6 +416,24 @@ namespace RFIECTool
         private void cmbTimeout_SelectedIndexChanged(object sender, EventArgs e)
         {
             iTimeoutCOM = Convert.ToInt32(cmbTimeout.Text);
+        }
+
+        private void btnOpenCOM_Click(object sender, EventArgs e)
+        {
+            if (!checkCom()) return;
+
+            OpenCOM(9600);
+        }
+
+        private void btnCloseCOM_Click(object sender, EventArgs e)
+        {
+            CloseCOM();
+            displayLog("Hoàn thành đóng COM");
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseCOM();
         }
     }
 }

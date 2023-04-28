@@ -52,6 +52,8 @@
             this.btnSaveLog = new System.Windows.Forms.Button();
             this.cmbTimeout = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnOpenCOM = new System.Windows.Forms.Button();
+            this.btnCloseCOM = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(264, 15);
+            this.btnRead.Location = new System.Drawing.Point(429, 14);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(72, 23);
             this.btnRead.TabIndex = 3;
@@ -85,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 20);
+            this.label2.Location = new System.Drawing.Point(9, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -95,14 +97,14 @@
             // 
             this.cmbPortList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPortList.FormattingEnabled = true;
-            this.cmbPortList.Location = new System.Drawing.Point(52, 16);
+            this.cmbPortList.Location = new System.Drawing.Point(52, 15);
             this.cmbPortList.Name = "cmbPortList";
             this.cmbPortList.Size = new System.Drawing.Size(100, 21);
             this.cmbPortList.TabIndex = 6;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(167, 15);
+            this.btnRefresh.Location = new System.Drawing.Point(167, 14);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(84, 23);
             this.btnRefresh.TabIndex = 7;
@@ -167,6 +169,7 @@
             this.txtOBISData.Name = "txtOBISData";
             this.txtOBISData.Size = new System.Drawing.Size(166, 20);
             this.txtOBISData.TabIndex = 22;
+            this.txtOBISData.Text = "1.0.1.8.0";
             // 
             // radReadOBIS
             // 
@@ -216,7 +219,7 @@
             // 
             // btnClearLog
             // 
-            this.btnClearLog.Location = new System.Drawing.Point(351, 15);
+            this.btnClearLog.Location = new System.Drawing.Point(516, 14);
             this.btnClearLog.Name = "btnClearLog";
             this.btnClearLog.Size = new System.Drawing.Size(75, 23);
             this.btnClearLog.TabIndex = 28;
@@ -226,7 +229,7 @@
             // 
             // btnSaveLog
             // 
-            this.btnSaveLog.Location = new System.Drawing.Point(432, 15);
+            this.btnSaveLog.Location = new System.Drawing.Point(597, 14);
             this.btnSaveLog.Name = "btnSaveLog";
             this.btnSaveLog.Size = new System.Drawing.Size(75, 23);
             this.btnSaveLog.TabIndex = 29;
@@ -259,11 +262,33 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "Timeout(s)";
             // 
+            // btnOpenCOM
+            // 
+            this.btnOpenCOM.Location = new System.Drawing.Point(257, 14);
+            this.btnOpenCOM.Name = "btnOpenCOM";
+            this.btnOpenCOM.Size = new System.Drawing.Size(75, 23);
+            this.btnOpenCOM.TabIndex = 32;
+            this.btnOpenCOM.Text = "Mở COM";
+            this.btnOpenCOM.UseVisualStyleBackColor = true;
+            this.btnOpenCOM.Click += new System.EventHandler(this.btnOpenCOM_Click);
+            // 
+            // btnCloseCOM
+            // 
+            this.btnCloseCOM.Location = new System.Drawing.Point(338, 14);
+            this.btnCloseCOM.Name = "btnCloseCOM";
+            this.btnCloseCOM.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseCOM.TabIndex = 33;
+            this.btnCloseCOM.Text = "Đóng COM";
+            this.btnCloseCOM.UseVisualStyleBackColor = true;
+            this.btnCloseCOM.Click += new System.EventHandler(this.btnCloseCOM_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 507);
+            this.Controls.Add(this.btnCloseCOM);
+            this.Controls.Add(this.btnOpenCOM);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbTimeout);
             this.Controls.Add(this.btnSaveLog);
@@ -291,6 +316,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RFIECTool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
@@ -322,6 +348,8 @@
         private System.Windows.Forms.Button btnSaveLog;
         private System.Windows.Forms.ComboBox cmbTimeout;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnOpenCOM;
+        private System.Windows.Forms.Button btnCloseCOM;
     }
 }
 
