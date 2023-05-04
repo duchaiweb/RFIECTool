@@ -54,6 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnOpenCOM = new System.Windows.Forms.Button();
             this.btnCloseCOM = new System.Windows.Forms.Button();
+            this.cmbManufacture = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 61);
+            this.label3.Location = new System.Drawing.Point(174, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 19;
@@ -146,10 +148,10 @@
             this.cmbMeterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMeterType.FormattingEnabled = true;
             this.cmbMeterType.Items.AddRange(new object[] {
-            "CE-18",
-            "ME-40",
-            "ME-42"});
-            this.cmbMeterType.Location = new System.Drawing.Point(247, 57);
+            "1P1G",
+            "3P1G",
+            "3P3G TT"});
+            this.cmbMeterType.Location = new System.Drawing.Point(257, 94);
             this.cmbMeterType.Name = "cmbMeterType";
             this.cmbMeterType.Size = new System.Drawing.Size(104, 21);
             this.cmbMeterType.TabIndex = 20;
@@ -185,7 +187,7 @@
             // radReadFromFile
             // 
             this.radReadFromFile.AutoSize = true;
-            this.radReadFromFile.Location = new System.Drawing.Point(372, 96);
+            this.radReadFromFile.Location = new System.Drawing.Point(372, 97);
             this.radReadFromFile.Name = "radReadFromFile";
             this.radReadFromFile.Size = new System.Drawing.Size(14, 13);
             this.radReadFromFile.TabIndex = 26;
@@ -193,7 +195,7 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(446, 92);
+            this.txtPath.Location = new System.Drawing.Point(446, 93);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(166, 20);
             this.txtPath.TabIndex = 25;
@@ -201,7 +203,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 96);
+            this.label5.Location = new System.Drawing.Point(391, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 24;
@@ -209,7 +211,7 @@
             // 
             // btnBrowser
             // 
-            this.btnBrowser.Location = new System.Drawing.Point(618, 91);
+            this.btnBrowser.Location = new System.Drawing.Point(618, 92);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(75, 23);
             this.btnBrowser.TabIndex = 27;
@@ -247,16 +249,16 @@
             "4",
             "5",
             "8"});
-            this.cmbTimeout.Location = new System.Drawing.Point(247, 91);
+            this.cmbTimeout.Location = new System.Drawing.Point(69, 93);
             this.cmbTimeout.Name = "cmbTimeout";
-            this.cmbTimeout.Size = new System.Drawing.Size(104, 21);
+            this.cmbTimeout.Size = new System.Drawing.Size(83, 21);
             this.cmbTimeout.TabIndex = 30;
             this.cmbTimeout.SelectedIndexChanged += new System.EventHandler(this.cmbTimeout_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 95);
+            this.label6.Location = new System.Drawing.Point(7, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 31;
@@ -282,11 +284,35 @@
             this.btnCloseCOM.UseVisualStyleBackColor = true;
             this.btnCloseCOM.Click += new System.EventHandler(this.btnCloseCOM_Click);
             // 
+            // cmbManufacture
+            // 
+            this.cmbManufacture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbManufacture.FormattingEnabled = true;
+            this.cmbManufacture.Items.AddRange(new object[] {
+            "Gelex",
+            "Psmart",
+            "Huu hong"});
+            this.cmbManufacture.Location = new System.Drawing.Point(257, 57);
+            this.cmbManufacture.Name = "cmbManufacture";
+            this.cmbManufacture.Size = new System.Drawing.Size(104, 21);
+            this.cmbManufacture.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(174, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Nhà sản xuất";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 507);
+            this.Controls.Add(this.cmbManufacture);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCloseCOM);
             this.Controls.Add(this.btnOpenCOM);
             this.Controls.Add(this.label6);
@@ -350,6 +376,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOpenCOM;
         private System.Windows.Forms.Button btnCloseCOM;
+        private System.Windows.Forms.ComboBox cmbManufacture;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -188,7 +188,8 @@ namespace RFIECTool
                 }
             }
 
-            cmbMeterType.Text = "CE-18";
+            cmbMeterType.Text = "1P1G";
+            cmbManufacture.Text = "Gelex";
             cmbTimeout.Text = "3";
         }
 
@@ -366,16 +367,29 @@ namespace RFIECTool
             string result = "";
             string seri = txtSerial.Text.PadLeft(12, '0');
             result += seri.Substring(0, 2) + " " + seri.Substring(2, 2) + " " + seri.Substring(4, 2) + " " + seri.Substring(6, 2) + " " + seri.Substring(8, 2) + " " + seri.Substring(10, 2) + " ";
-            result += "01 "; // gelex
-            if (cmbMeterType.Text == "CE-18")
+
+            if (cmbManufacture.Text == "Gelex")
             {
                 result += "01 ";
             }
-            else if (cmbMeterType.Text == "ME-40")
+            else if (cmbManufacture.Text == "Psmart")
             {
                 result += "02 ";
             }
-            else if (cmbMeterType.Text == "ME-42")
+            else if (cmbManufacture.Text == "Huu hong")
+            {
+                result += "03 ";
+            }
+
+            if (cmbMeterType.Text == "1P1G")
+            {
+                result += "01 ";
+            }
+            else if (cmbMeterType.Text == "3P1G")
+            {
+                result += "02 ";
+            }
+            else if (cmbMeterType.Text == "3P3G TT")
             {
                 result += "03 ";
             }
