@@ -182,7 +182,9 @@ namespace RFIECTool
 
             cmbMeterType.Text = "1P1G";
             cmbManufacture.Text = "Gelex";
-            cmbTimeout.Text = "3";
+            cmbTimeout.Text = "5";
+
+            InitTimer_COM();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -208,8 +210,6 @@ namespace RFIECTool
                 displayLog("Chưa chọn cổng COM");
                 return false;
             }
-
-            InitTimer_COM();
 
             comName = cmbPortList.Text;
 
