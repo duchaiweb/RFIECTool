@@ -24,7 +24,7 @@ namespace RFIECTool
         public string Serial = "";
 
         public int iIntervalTimer = 1000;   // 1s
-        public static int iTimeoutCOM = 3; // số giây
+        public static int iTimeoutCOM = 5; // số giây
         public int iCounterTimeout = 0;
         public bool bEnableCouter = false;
         public bool bTimeoutFlag = false;
@@ -33,7 +33,6 @@ namespace RFIECTool
 
         private ManualResetEvent receiveDone = new ManualResetEvent(false);
         private string bBufferRecv = "";
-        public DataTable dtResultFinal = new DataTable();
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -171,13 +170,6 @@ namespace RFIECTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtResultFinal.Columns.Add("#");
-            dtResultFinal.Columns.Add("Time");
-            dtResultFinal.Columns.Add("Send Frame");
-            dtResultFinal.Columns.Add("Recv Frame");
-            dtResultFinal.Columns.Add("Send Hex");
-            dtResultFinal.Columns.Add("Recv Hex");
-
             if (aPorts.Length > 0)
             {
                 for (int i = 0; i < aPorts.Length; i++)
@@ -284,41 +276,16 @@ namespace RFIECTool
                     ReadData(s);
                 }
             }
-
-            // Lưu log
-            DataTable data = (DataTable)(dgvResult.DataSource);
-            string pathExcel = Path.Combine(MyLib.GetAppPath(), @"Logs\" + DateTime.Now.ToString("yyyy-MM-dd") + @"\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xlsx");
-            MyLib.ExportToExcel(data, pathExcel);
-            GC.Collect();
-
+            string path = Path.Combine(MyLib.GetAppPath(), @"Logs\" + DateTime.Now.ToString("yyyy-MM-dd") + @"\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt");
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            File.AppendAllText(path, rtbOutput.Text);
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
         }
 
         public void ReadData(string data)
         {
-            DataRow drResultFinal = dtResultFinal.NewRow();
             string sendHex = CreateFrame(data);
             string strData = SendCOM(sendHex);
-
-            drResultFinal["#"] = (dtResultFinal.Rows.Count + 1).ToString();
-            drResultFinal["Time"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            drResultFinal["Send Frame"] = data + "()";
-            try
-            {
-                drResultFinal["Recv Frame"] = MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(strData.Substring(42, strData.Length - 48)));
-            }
-            catch { }
-            drResultFinal["Send Hex"] = sendHex;
-            drResultFinal["Recv Hex"] = strData;
-
-            AddDgvLog(drResultFinal);
-        }
-
-        public void AddDgvLog(DataRow dr)
-        {
-            dtResultFinal.Rows.InsertAt(dr, 0);
-            dgvResult.DataSource = dtResultFinal;
-            Application.DoEvents();
         }
 
         private void btnBrowser_Click(object sender, EventArgs e)
@@ -417,14 +384,23 @@ namespace RFIECTool
             if (dialogResult == DialogResult.Yes)
             {
                 rtbOutput.Clear();
-                dgvResult.DataSource = null;
-                dtResultFinal.Clear();
             }
         }
 
         private void btnSaveLog_Click(object sender, EventArgs e)
         {
-            MyLib.ExportDgvToExcel(dgvResult);
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Title = "Save";
+            saveDialog.Filter = "Txt Files (*.txt)|*.txt";
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string file = saveDialog.FileName;
+                Directory.CreateDirectory(Path.GetDirectoryName(file));
+                File.AppendAllText(file, rtbOutput.Text);
+                GC.Collect();
+                MyLib.NoticeInfo("Hoàn thành!", "Thông báo");
+            }
+            GC.Collect();
         }
 
         private void cmbTimeout_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,7 +38,6 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dgvResult = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMeterType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@
             this.btnCloseCOM = new System.Windows.Forms.Button();
             this.cmbManufacture = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSerial
@@ -117,22 +115,11 @@
             // rtbOutput
             // 
             this.rtbOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbOutput.Location = new System.Drawing.Point(854, 13);
+            this.rtbOutput.Location = new System.Drawing.Point(12, 121);
             this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(251, 482);
+            this.rtbOutput.Size = new System.Drawing.Size(938, 374);
             this.rtbOutput.TabIndex = 17;
             this.rtbOutput.Text = "";
-            // 
-            // dgvResult
-            // 
-            this.dgvResult.AllowUserToAddRows = false;
-            this.dgvResult.AllowUserToDeleteRows = false;
-            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResult.Location = new System.Drawing.Point(9, 133);
-            this.dgvResult.Name = "dgvResult";
-            this.dgvResult.RowHeadersVisible = false;
-            this.dgvResult.Size = new System.Drawing.Size(839, 362);
-            this.dgvResult.TabIndex = 18;
             // 
             // label3
             // 
@@ -310,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 507);
+            this.ClientSize = new System.Drawing.Size(962, 507);
             this.Controls.Add(this.cmbManufacture);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCloseCOM);
@@ -328,7 +315,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbMeterType);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvResult);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbPortList);
@@ -344,7 +330,6 @@
             this.Text = "RFIECTool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +345,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMeterType;
         private System.Windows.Forms.Label label4;
