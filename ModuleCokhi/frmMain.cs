@@ -126,6 +126,11 @@ namespace RFIECTool
             string str = "NACK";
 
             displayLog("Send: " + MyLib.FormatHexString(strData));
+            try
+            {
+                displayLog("Data: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(strData.Substring(42, strData.Length - 48)))));
+            }
+            catch { }
 
             byte[] bufferOBIS = MyLib.HexStringToArrByte(strData);
 
@@ -158,6 +163,12 @@ namespace RFIECTool
             str = bBufferRecv.Trim('-').Trim().Replace('-', ' ').Replace("  ", " ");
 
             displayLog("Recv: " + MyLib.FormatHexString(str));
+            try
+            {
+                displayLog("Data: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(45, str.Length - 51)))));
+            }
+            catch { }
+
             checkRecv(MyLib.FormatHexString(str));
 
             return str;
