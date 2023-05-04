@@ -158,8 +158,100 @@ namespace RFIECTool
             str = bBufferRecv.Trim('-').Trim().Replace('-', ' ').Replace("  ", " ");
 
             displayLog("Recv: " + MyLib.FormatHexString(str));
+            checkRecv(MyLib.FormatHexString(str));
 
             return str;
+        }
+
+        public void checkRecv(string recv)
+        {
+            string seri = txtSerial.Text.PadLeft(12, '0');
+            string ck_seri = seri.Substring(0, 2) + " " + seri.Substring(2, 2) + " " + seri.Substring(4, 2) + " " + seri.Substring(6, 2) + " " + seri.Substring(8, 2) + " " + seri.Substring(10, 2);
+            try
+            {
+                if (recv.Substring(12, 17) != ck_seri)
+                {
+                    displayLog("Seri sai");
+                }
+            }
+            catch { }
+            try
+            {
+                if (cmbManufacture.Text == "Gelex")
+                {
+                    if (recv.Substring(30, 2) != "01")
+                    {
+                        displayLog("Nhà sx sai");
+                    }
+                }
+                else if (cmbManufacture.Text == "Psmart")
+                {
+                    if (recv.Substring(30, 2) != "02")
+                    {
+                        displayLog("Nhà sx sai");
+                    }
+                }
+                else if (cmbManufacture.Text == "Huu hong")
+                {
+                    if (recv.Substring(30, 2) != "03")
+                    {
+                        displayLog("Nhà sx sai");
+                    }
+                }
+            }
+            catch { }
+
+            try
+            {
+                if (cmbMeterType.Text == "1P1G")
+                {
+                    if (recv.Substring(33, 2) != "01")
+                    {
+                        displayLog("Kiểu công tơ sai");
+                    }
+                }
+                else if (cmbMeterType.Text == "3P1G")
+                {
+                    if (recv.Substring(33, 2) != "02")
+                    {
+                        displayLog("Kiểu công tơ sai");
+                    }
+                }
+                else if (cmbMeterType.Text == "3P3G TT")
+                {
+                    if (recv.Substring(33, 2) != "03")
+                    {
+                        displayLog("Kiểu công tơ sai");
+                    }
+                }
+            }
+            catch { }
+
+            try
+            {
+                if (recv.Substring(36, 2) != "FF")
+                {
+                    displayLog("Sequence sai");
+                }
+            }
+            catch { }
+
+            try
+            {
+                if ((recv.Substring(3, recv.Length - 3).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(6, 5).Replace(" ", ""))
+                {
+                    displayLog("Length frame sai");
+                }
+            }
+            catch { }
+            try
+            {
+                if ((recv.Substring(45, recv.Length - 51).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(39, 5).Replace(" ", ""))
+                {
+                    displayLog("Length data sai");
+                }
+            }
+            catch { }
         }
 
         public frmMain()
