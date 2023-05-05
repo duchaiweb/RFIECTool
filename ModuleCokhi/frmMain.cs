@@ -128,7 +128,7 @@ namespace RFIECTool
             displayLog("Send: " + MyLib.FormatHexString(strData));
             try
             {
-                displayLog("Data: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(strData.Substring(42, strData.Length - 48)))));
+                displayLog("Data send: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(strData.Substring(42, strData.Length - 48)))));
             }
             catch { }
 
@@ -165,7 +165,14 @@ namespace RFIECTool
             displayLog("Recv: " + MyLib.FormatHexString(str));
             try
             {
-                displayLog("Data: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(45, str.Length - 51)))));
+                if (cmbManufacture.Text == "Psmart")
+                {
+                    displayLog("Data recv: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(51, str.Length - 57)))));
+                }
+                else
+                {
+                    displayLog("Data recv: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(45, str.Length - 51)))));
+                }
             }
             catch { }
 
@@ -176,8 +183,18 @@ namespace RFIECTool
 
         public void checkRecv(string recv)
         {
+            try
+            {
+                if (cmbManufacture.Text == "Psmart")
+                {
+                    recv = recv.Substring(6, recv.Length - 6);
+                }
+            }
+            catch { }
+
             string seri = txtSerial.Text.PadLeft(12, '0');
             string ck_seri = seri.Substring(0, 2) + " " + seri.Substring(2, 2) + " " + seri.Substring(4, 2) + " " + seri.Substring(6, 2) + " " + seri.Substring(8, 2) + " " + seri.Substring(10, 2);
+
             try
             {
                 if (recv.Substring(12, 17) != ck_seri)
@@ -186,6 +203,7 @@ namespace RFIECTool
                 }
             }
             catch { }
+
             try
             {
                 if (cmbManufacture.Text == "Gelex")
@@ -344,7 +362,7 @@ namespace RFIECTool
             else
             {
                 Color textColor = new Color();
-                if (msg.IndexOf("Send") > -1 || msg.IndexOf("thành công") > -1)
+                if (msg.ToLower().IndexOf("send") > -1 || msg.ToLower().IndexOf("thành công") > -1)
                 {
                     textColor = Color.Blue;
                 }
