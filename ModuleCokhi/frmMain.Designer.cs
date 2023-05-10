@@ -233,7 +233,9 @@
             "3",
             "4",
             "5",
-            "8"});
+            "8",
+            "10",
+            "15"});
             this.cmbTimeout.Location = new System.Drawing.Point(69, 93);
             this.cmbTimeout.Name = "cmbTimeout";
             this.cmbTimeout.Size = new System.Drawing.Size(83, 21);
