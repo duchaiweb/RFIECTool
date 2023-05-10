@@ -165,14 +165,7 @@ namespace RFIECTool
             displayLog("Recv: " + MyLib.FormatHexString(str));
             try
             {
-                if (cmbManufacture.Text == "Psmart")
-                {
-                    displayLog("Data recv: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(51, str.Length - 57)))));
-                }
-                else
-                {
-                    displayLog("Data recv: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(45, str.Length - 51)))));
-                }
+                displayLog("Data recv: " + MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
             }
             catch { }
 
@@ -183,21 +176,12 @@ namespace RFIECTool
 
         public void checkRecv(string recv)
         {
-            try
-            {
-                if (cmbManufacture.Text == "Psmart")
-                {
-                    recv = recv.Substring(6, recv.Length - 6);
-                }
-            }
-            catch { }
-
             string seri = txtSerial.Text.PadLeft(12, '0');
             string ck_seri = seri.Substring(0, 2) + " " + seri.Substring(2, 2) + " " + seri.Substring(4, 2) + " " + seri.Substring(6, 2) + " " + seri.Substring(8, 2) + " " + seri.Substring(10, 2);
 
             try
             {
-                if (recv.Substring(12, 17) != ck_seri)
+                if (recv.Substring(9, 17) != ck_seri)
                 {
                     displayLog("Seri sai");
                 }
@@ -208,21 +192,21 @@ namespace RFIECTool
             {
                 if (cmbManufacture.Text == "Gelex")
                 {
-                    if (recv.Substring(30, 2) != "01")
+                    if (recv.Substring(27, 2) != "01")
                     {
                         displayLog("Nhà sx sai");
                     }
                 }
                 else if (cmbManufacture.Text == "Psmart")
                 {
-                    if (recv.Substring(30, 2) != "02")
+                    if (recv.Substring(27, 2) != "02")
                     {
                         displayLog("Nhà sx sai");
                     }
                 }
                 else if (cmbManufacture.Text == "Huu hong")
                 {
-                    if (recv.Substring(30, 2) != "03")
+                    if (recv.Substring(27, 2) != "03")
                     {
                         displayLog("Nhà sx sai");
                     }
@@ -234,21 +218,21 @@ namespace RFIECTool
             {
                 if (cmbMeterType.Text == "1P1G")
                 {
-                    if (recv.Substring(33, 2) != "01")
+                    if (recv.Substring(30, 2) != "01")
                     {
                         displayLog("Kiểu công tơ sai");
                     }
                 }
                 else if (cmbMeterType.Text == "3P1G")
                 {
-                    if (recv.Substring(33, 2) != "02")
+                    if (recv.Substring(30, 2) != "02")
                     {
                         displayLog("Kiểu công tơ sai");
                     }
                 }
                 else if (cmbMeterType.Text == "3P3G TT")
                 {
-                    if (recv.Substring(33, 2) != "03")
+                    if (recv.Substring(30, 2) != "03")
                     {
                         displayLog("Kiểu công tơ sai");
                     }
@@ -258,7 +242,7 @@ namespace RFIECTool
 
             try
             {
-                if (recv.Substring(36, 2) != "FF")
+                if (recv.Substring(33, 2) != "FF")
                 {
                     displayLog("Sequence sai");
                 }
@@ -267,7 +251,7 @@ namespace RFIECTool
 
             try
             {
-                if ((recv.Substring(3, recv.Length - 3).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(6, 5).Replace(" ", ""))
+                if ((recv.Substring(0, recv.Length).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(3, 5).Replace(" ", ""))
                 {
                     displayLog("Length frame sai");
                 }
@@ -275,7 +259,7 @@ namespace RFIECTool
             catch { }
             try
             {
-                if ((recv.Substring(45, recv.Length - 51).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(39, 5).Replace(" ", ""))
+                if ((recv.Substring(42, recv.Length - 48).Replace(" ", "").Length / 2).ToString("X4") != recv.Substring(36, 5).Replace(" ", ""))
                 {
                     displayLog("Length data sai");
                 }
