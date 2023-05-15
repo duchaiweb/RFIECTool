@@ -68,7 +68,7 @@ namespace RFIECTool
             int ibyte = serialPort.BytesToRead;
             byte[] myArrData = new byte[ibyte];
             serialPort.Read(myArrData, 0, ibyte);
-            bBufferRecv += MyLib.FormatHexString("-" + BitConverter.ToString(myArrData));
+            bBufferRecv = MyLib.FormatHexString(bBufferRecv + BitConverter.ToString(myArrData));
             try
             {
                 if (bBufferRecv.Length >= Convert.ToInt32(bBufferRecv.Substring(3, 5).Replace(" ",""), 16)*3-1)

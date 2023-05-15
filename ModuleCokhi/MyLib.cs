@@ -533,7 +533,7 @@ namespace RFIECTool
         public static string FormatHexString(string hex)
         {
             string newHex = "";
-            hex = hex.Replace(" ", "");
+            hex = hex.Replace(" ", "").Replace("-","");
             for (int i = 0; i < hex.Length; i++)
             {
                 newHex += hex[i];
