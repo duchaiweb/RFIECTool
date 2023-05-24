@@ -637,7 +637,7 @@ namespace RFIECTool
         public string GetValue(string s)
         {
             int idex = s.IndexOf("(");
-            return s.Substring(idex + 1, s.Length - idex - 2).Replace("*","").Replace("kWh", "");
+            return s.Substring(idex + 1, s.Length - idex - 2);
         }
 
         public string ReadDataThau(string data, string seri, string manu, string metertype)

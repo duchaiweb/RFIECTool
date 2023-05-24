@@ -72,12 +72,12 @@
             this.textBox76 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox77 = new System.Windows.Forms.TextBox();
-            this.checkBox74 = new System.Windows.Forms.CheckBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
-            this.checkBox75 = new System.Windows.Forms.CheckBox();
-            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.chkDDS26D = new System.Windows.Forms.CheckBox();
+            this.txtDDS26D_Seri = new System.Windows.Forms.TextBox();
+            this.chkDDS26D_180 = new System.Windows.Forms.CheckBox();
+            this.txtDDS26D_Time = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.txtDDS26D_180 = new System.Windows.Forms.TextBox();
             this.chb_SF80C21_2 = new System.Windows.Forms.CheckBox();
             this.Tb_SF80C21_2 = new System.Windows.Forms.TextBox();
             this.checkBox71 = new System.Windows.Forms.CheckBox();
@@ -581,17 +581,17 @@
             this.tabPage2.Controls.Add(this.checkBox49);
             this.tabPage2.Controls.Add(this.Tb_SF80C21_2);
             this.tabPage2.Controls.Add(this.textBox53);
-            this.tabPage2.Controls.Add(this.checkBox74);
+            this.tabPage2.Controls.Add(this.chkDDS26D);
             this.tabPage2.Controls.Add(this.checkBox50);
             this.tabPage2.Controls.Add(this.chb_SF80C21_2);
             this.tabPage2.Controls.Add(this.textBox54);
-            this.tabPage2.Controls.Add(this.textBox78);
+            this.tabPage2.Controls.Add(this.txtDDS26D_Seri);
             this.tabPage2.Controls.Add(this.checkBox51);
-            this.tabPage2.Controls.Add(this.checkBox75);
+            this.tabPage2.Controls.Add(this.chkDDS26D_180);
             this.tabPage2.Controls.Add(this.textBox55);
-            this.tabPage2.Controls.Add(this.textBox80);
+            this.tabPage2.Controls.Add(this.txtDDS26D_180);
             this.tabPage2.Controls.Add(this.checkBox52);
-            this.tabPage2.Controls.Add(this.textBox79);
+            this.tabPage2.Controls.Add(this.txtDDS26D_Time);
             this.tabPage2.Controls.Add(this.textBox56);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.checkBox53);
@@ -694,7 +694,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1033, 471);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Đọc thầu";
+            this.tabPage2.Text = "Đọc ds";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // checkBox78
@@ -860,46 +860,46 @@
             this.textBox77.Size = new System.Drawing.Size(76, 19);
             this.textBox77.TabIndex = 291;
             // 
-            // checkBox74
+            // chkDDS26D
             // 
-            this.checkBox74.AutoSize = true;
-            this.checkBox74.Location = new System.Drawing.Point(11, 56);
-            this.checkBox74.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox74.Name = "checkBox74";
-            this.checkBox74.Size = new System.Drawing.Size(69, 17);
-            this.checkBox74.TabIndex = 290;
-            this.checkBox74.Text = "DDS26D";
-            this.checkBox74.UseVisualStyleBackColor = true;
+            this.chkDDS26D.AutoSize = true;
+            this.chkDDS26D.Location = new System.Drawing.Point(11, 56);
+            this.chkDDS26D.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDDS26D.Name = "chkDDS26D";
+            this.chkDDS26D.Size = new System.Drawing.Size(69, 17);
+            this.chkDDS26D.TabIndex = 290;
+            this.chkDDS26D.Text = "DDS26D";
+            this.chkDDS26D.UseVisualStyleBackColor = true;
             // 
-            // textBox78
+            // txtDDS26D_Seri
             // 
-            this.textBox78.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox78.Location = new System.Drawing.Point(86, 55);
-            this.textBox78.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.Size = new System.Drawing.Size(81, 19);
-            this.textBox78.TabIndex = 289;
-            this.textBox78.Text = "002213321347";
+            this.txtDDS26D_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_Seri.Location = new System.Drawing.Point(86, 55);
+            this.txtDDS26D_Seri.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_Seri.Name = "txtDDS26D_Seri";
+            this.txtDDS26D_Seri.Size = new System.Drawing.Size(81, 19);
+            this.txtDDS26D_Seri.TabIndex = 289;
+            this.txtDDS26D_Seri.Text = "002213321347";
             // 
-            // checkBox75
+            // chkDDS26D_180
             // 
-            this.checkBox75.AutoSize = true;
-            this.checkBox75.Location = new System.Drawing.Point(184, 56);
-            this.checkBox75.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox75.Name = "checkBox75";
-            this.checkBox75.Size = new System.Drawing.Size(44, 17);
-            this.checkBox75.TabIndex = 288;
-            this.checkBox75.Text = "180";
-            this.checkBox75.UseVisualStyleBackColor = true;
+            this.chkDDS26D_180.AutoSize = true;
+            this.chkDDS26D_180.Location = new System.Drawing.Point(184, 56);
+            this.chkDDS26D_180.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDDS26D_180.Name = "chkDDS26D_180";
+            this.chkDDS26D_180.Size = new System.Drawing.Size(44, 17);
+            this.chkDDS26D_180.TabIndex = 288;
+            this.chkDDS26D_180.Text = "180";
+            this.chkDDS26D_180.UseVisualStyleBackColor = true;
             // 
-            // textBox79
+            // txtDDS26D_Time
             // 
-            this.textBox79.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox79.Location = new System.Drawing.Point(345, 55);
-            this.textBox79.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox79.Name = "textBox79";
-            this.textBox79.Size = new System.Drawing.Size(116, 19);
-            this.textBox79.TabIndex = 287;
+            this.txtDDS26D_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_Time.Location = new System.Drawing.Point(345, 55);
+            this.txtDDS26D_Time.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_Time.Name = "txtDDS26D_Time";
+            this.txtDDS26D_Time.Size = new System.Drawing.Size(116, 19);
+            this.txtDDS26D_Time.TabIndex = 287;
             // 
             // label11
             // 
@@ -912,14 +912,14 @@
             this.label11.TabIndex = 286;
             this.label11.Text = "time";
             // 
-            // textBox80
+            // txtDDS26D_180
             // 
-            this.textBox80.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox80.Location = new System.Drawing.Point(229, 55);
-            this.textBox80.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox80.Name = "textBox80";
-            this.textBox80.Size = new System.Drawing.Size(76, 19);
-            this.textBox80.TabIndex = 285;
+            this.txtDDS26D_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_180.Location = new System.Drawing.Point(229, 55);
+            this.txtDDS26D_180.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_180.Name = "txtDDS26D_180";
+            this.txtDDS26D_180.Size = new System.Drawing.Size(76, 19);
+            this.txtDDS26D_180.TabIndex = 285;
             // 
             // chb_SF80C21_2
             // 
@@ -2457,7 +2457,7 @@
             this.btnReadThau.Name = "btnReadThau";
             this.btnReadThau.Size = new System.Drawing.Size(72, 23);
             this.btnReadThau.TabIndex = 37;
-            this.btnReadThau.Text = "Đọc thầu";
+            this.btnReadThau.Text = "Đọc DS";
             this.btnReadThau.UseVisualStyleBackColor = true;
             this.btnReadThau.Click += new System.EventHandler(this.btnReadThau_Click);
             // 
@@ -2635,12 +2635,12 @@
         private System.Windows.Forms.CheckBox checkBox71;
         private System.Windows.Forms.TextBox textBox77;
         private System.Windows.Forms.TextBox Tb_SF80C21_2;
-        private System.Windows.Forms.CheckBox checkBox74;
+        private System.Windows.Forms.CheckBox chkDDS26D;
         private System.Windows.Forms.CheckBox chb_SF80C21_2;
-        private System.Windows.Forms.TextBox textBox78;
-        private System.Windows.Forms.CheckBox checkBox75;
-        private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.TextBox textBox79;
+        private System.Windows.Forms.TextBox txtDDS26D_Seri;
+        private System.Windows.Forms.CheckBox chkDDS26D_180;
+        private System.Windows.Forms.TextBox txtDDS26D_180;
+        private System.Windows.Forms.TextBox txtDDS26D_Time;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox checkBox76;
         private System.Windows.Forms.TextBox textBox81;
