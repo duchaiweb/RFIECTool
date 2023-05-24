@@ -618,6 +618,18 @@ namespace RFIECTool
                 Txt_SF80C21_1_180.Text = str;
                 Txt_SF80C21_1_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
+            if (chkDDS26D.Checked && chkDDS26D_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtDDS26D_Seri.Text, "03", "01");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtDDS26D_180.Text = str;
+                txtDDS26D_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
 
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
         }
