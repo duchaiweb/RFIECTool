@@ -183,6 +183,42 @@ namespace RFIECTool
             return str;
         }
 
+        private string SendCOMThau(string strData)
+        {
+            string str = "NACK";
+
+            byte[] bufferOBIS = MyLib.HexStringToArrByte(strData);
+
+            try
+            {
+                myPort.ReadExisting();
+            }
+            catch
+            {
+                displayLog("Xoá buffer COM lỗi");
+                return "NACK";
+            }
+
+            receiveDone.Reset();
+
+            initWaitRec();
+
+            myPort.Write(bufferOBIS, 0, bufferOBIS.Length);
+
+            receiveDone.WaitOne();
+
+            if (bBufferRecv == "")
+            {
+                StopCounterTimer();
+                SetEventFlag(true);
+                return "NACK";
+            }
+
+            str = bBufferRecv.Trim('-').Trim().Replace('-', ' ').Replace("  ", " ");
+
+            return str;
+        }
+
         public void checkRecv(string recv)
         {
             string seri = txtSerial.Text.PadLeft(12, '0');
@@ -492,6 +528,33 @@ namespace RFIECTool
             return MyLib.FormatHexString(result);
         }
 
+        public string CreateFrameThau(string data, string seri, string manu, string metertype)
+        {
+            string result = "";
+            seri = seri.PadLeft(12, '0');
+            result += seri.Substring(0, 2) + " " + seri.Substring(2, 2) + " " + seri.Substring(4, 2) + " " + seri.Substring(6, 2) + " " + seri.Substring(8, 2) + " " + seri.Substring(10, 2) + " ";
+
+            result += manu + " ";
+            result += metertype + " ";
+
+            result += "00 "; // sequence
+
+            string hexData = "";
+            hexData += MyLib.ASCIIToHexString(data) + " ";   // data
+            hexData += "28 29 "; // ()
+
+            result += MyLib.FormatHexString((hexData.Replace(" ", "").Length / 2).ToString("X4")) + " ";  // length data
+            result += hexData;
+            result = MyLib.FormatHexString((16 + hexData.Replace(" ", "").Length / 2).ToString("X4")) + " " + result;  // length frame
+            result = MyLib.FormatHexString(result);
+
+            result += MyLib.CRCXor(result) + " ";   // crc
+            result += "16";
+            result = "68 " + result;
+
+            return MyLib.FormatHexString(result);
+        }
+
         private void btnClearLog_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn xóa log?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -538,6 +601,38 @@ namespace RFIECTool
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             CloseCOM();
+        }
+
+        private void btnReadThau_Click(object sender, EventArgs e)
+        {
+            string str = "";
+            if (Chb_SF80C21_1.Checked && Chb_SF80C21_1_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", Txt_SF80C21_1_Serial.Text, "02", "01");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                Txt_SF80C21_1_180.Text = str;
+                Txt_SF80C21_1_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
+        }
+
+        public string GetValue(string s)
+        {
+            int idex = s.IndexOf("(");
+            return s.Substring(idex + 1, s.Length - idex - 2).Replace("*","").Replace("kWh", "");
+        }
+
+        public string ReadDataThau(string data, string seri, string manu, string metertype)
+        {
+            string sendHex = CreateFrameThau(data, seri, manu, metertype);
+            string strData = SendCOMThau(sendHex);
+            return strData;
         }
     }
 }
