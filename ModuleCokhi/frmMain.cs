@@ -616,7 +616,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtSF80C21_180.Text = str;
-                txtSF80C21_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtSF80C21_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
             if (chkDDS26D.Checked && chkDDS26D_180.Checked)
             {
@@ -628,7 +628,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtDDS26D_180.Text = str;
-                txtDDS26D_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtDDS26D_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
             if (chkTF100P31.Checked && chkTF100P31_180.Checked)
             {
@@ -640,7 +640,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtTF100P31_180.Text = str;
-                txtTF100P31_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtTF100P31_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
             if (chkTF100P31.Checked && chkTF100P31_380.Checked)
             {
@@ -652,7 +652,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtTF100P31_380.Text = str;
-                txtTF100P31_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtTF100P31_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
 
             if (chkDTS273P1T.Checked && chkDTS273P1T_180.Checked)
@@ -665,7 +665,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtDTS273P1T_180.Text = str;
-                txtDTS273P1T_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtDTS273P1T_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
             if (chkDTS273P1T.Checked && chkDTS273P1T_380.Checked)
             {
@@ -677,7 +677,7 @@ namespace RFIECTool
                 }
                 catch { }
                 txtDTS273P1T_380.Text = str;
-                txtDTS273P1T_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtDTS273P1T_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
 
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
@@ -686,7 +686,7 @@ namespace RFIECTool
         public string GetValue(string s)
         {
             int idex = s.IndexOf("(");
-            return s.Substring(idex + 1, s.Length - idex - 2);
+            return s.Substring(idex, s.Length - idex);
         }
 
         public string ReadDataThau(string data, string seri, string manu, string metertype)
