@@ -1075,7 +1075,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.0", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.1.8.0", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1087,7 +1087,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.1", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.1.8.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1099,7 +1099,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.2", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.1.8.2", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1111,7 +1111,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.3", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.1.8.3", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1124,7 +1124,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.8.0", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.2.8.0", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1137,7 +1137,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.8.1", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.2.8.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1150,7 +1150,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.8.2", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.2.8.2", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1163,7 +1163,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.8.3", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.2.8.3", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1176,7 +1176,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.3.8.0", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.3.8.0", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1189,7 +1189,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.4.8.0", txtTF100m31_Seri.Text, "03", "03");
+                    str = ReadDataThau("1.0.4.8.0", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1201,7 +1201,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("0.0.0.9.4", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("0.0.0.9.4", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -1212,7 +1212,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("0.0.C.7.10", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("0.0.C.7.10", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustEvent(str);
                 }
@@ -1225,7 +1225,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.0.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1238,7 +1238,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.1.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1252,7 +1252,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.2.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1265,7 +1265,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.3.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1279,7 +1279,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.0.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1292,7 +1292,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.1.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1305,7 +1305,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.2.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
@@ -1318,7 +1318,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.3.1", txtDTS273P3T_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
                 }
