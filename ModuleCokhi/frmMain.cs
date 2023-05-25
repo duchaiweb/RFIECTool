@@ -823,6 +823,7 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("0.0.0.9.4", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustTime(str);
                 }
                 catch { }
                 txtTF100m31_Time.Text = str;
@@ -980,6 +981,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.1.6.0.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -992,6 +998,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.1.6.1.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1004,6 +1015,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.1.6.2.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1016,6 +1032,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.1.6.3.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1028,6 +1049,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.2.6.0.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1040,6 +1066,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.2.6.1.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1052,6 +1083,11 @@ namespace RFIECTool
                 {
                     str = ReadDataThau("1.0.2.6.2.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1065,11 +1101,16 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.3.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
                 txtTF100m31_2631.Text = str;
             }
+
             if (chkDTS273P3T.Checked && chkDTS273P3T_180.Checked)
             {
                 str = "";
@@ -1118,7 +1159,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_183.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_280.Checked)
             {
                 str = "";
@@ -1131,7 +1171,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_280.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_281.Checked)
             {
                 str = "";
@@ -1144,7 +1183,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_281.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_282.Checked)
             {
                 str = "";
@@ -1157,7 +1195,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_282.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_283.Checked)
             {
                 str = "";
@@ -1170,7 +1207,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_283.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_380.Checked)
             {
                 str = "";
@@ -1183,7 +1219,6 @@ namespace RFIECTool
 
                 txtDTS273P3T_380.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_480.Checked)
             {
                 str = "";
@@ -1201,8 +1236,9 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("0.0.0.9.4", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("0.0.0.9.4", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustTime(str);
                 }
                 catch { }
                 txtDTS273P3T_Time.Text = str;
@@ -1220,14 +1256,138 @@ namespace RFIECTool
 
                 rtbDTS273P3T_Event.Text = str;
             }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_1801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_1801.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_1811.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.1.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_1811.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_1821.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.2.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_1821.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_1831.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.3.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_1831.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_2801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.0.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_2801.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_2811.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.1.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_2811.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_2821.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.2.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_2821.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_2831.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.3.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_2831.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_3801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.3.8.0.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_3801.Text = str;
+            }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_4801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.4.8.0.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtDTS273P3T_4801.Text = str;
+            }
             if (chkDTS273P3T.Checked && chkDTS273P3T_1601.Checked)
             {
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.0.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.0.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1238,23 +1398,30 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.1.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.1.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
                 txtDTS273P3T_1611.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_1621.Checked)
             {
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.2.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.2.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1265,23 +1432,30 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.6.3.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.1.6.3.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
                 txtDTS273P3T_1631.Text = str;
             }
-
             if (chkDTS273P3T.Checked && chkDTS273P3T_2601.Checked)
             {
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.0.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.0.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1292,9 +1466,13 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.1.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.1.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1305,9 +1483,13 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.2.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.2.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 
@@ -1318,9 +1500,13 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.2.6.3.1", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("1.0.2.6.3.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    if (MyLib.countChar('(', str) < 2)
+                    {
+                        str += "(0000000000)";
+                    }
                 }
                 catch { }
 

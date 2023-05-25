@@ -758,5 +758,11 @@ namespace RFIECTool
             }
             return crc.ToString("X2");
         }
+
+        // Đếm số ký tự xuất hiện trong chuỗi
+        public static int countChar(char c, string s)
+        {
+            return s.Split(c).Length - 1;
+        }
     }
 }
