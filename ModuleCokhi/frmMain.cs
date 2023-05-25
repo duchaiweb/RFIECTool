@@ -606,7 +606,7 @@ namespace RFIECTool
         private void btnReadThau_Click(object sender, EventArgs e)
         {
             string str = "";
-            if (Chb_SF80C21_1.Checked && Chb_SF80C21_1_180.Checked)
+            if (chkSF80C21.Checked && chkSF80C21_180.Checked)
             {
                 str = "";
                 try
@@ -615,20 +615,44 @@ namespace RFIECTool
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
-                Txt_SF80C21_1_180.Text = str;
-                Txt_SF80C21_1_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtSF80C21_180.Text = str;
+                txtSF80C21_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
             if (chkDDS26D.Checked && chkDDS26D_180.Checked)
             {
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.0", txtDDS26D_Seri.Text, "03", "01");
+                    str = ReadDataThau("1.0.1.8.0", txtDDS26D_Seri.Text, "03", "02");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
                 txtDDS26D_180.Text = str;
                 txtDDS26D_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            if (chkTF100P31.Checked && chkTF100P31_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtTF100P31_Seri.Text, "02", "01");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100P31_180.Text = str;
+                txtTF100P31_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            if (chkTF100P31.Checked && chkTF100P31_380.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.3.8.0", txtTF100P31_Seri.Text, "02", "01");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100P31_380.Text = str;
+                txtTF100P31_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
 
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
