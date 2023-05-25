@@ -679,6 +679,370 @@ namespace RFIECTool
                 txtDTS273P1T_380.Text = str;
                 txtDTS273P1T_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
+            if (chkTF100m31.Checked && chkTF100m31_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_180.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_181.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_181.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_182.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.2", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_182.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_183.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.3", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_183.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_280.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.0", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_280.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_281.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_281.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_282.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.2", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_282.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_283.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.3", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_283.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_380.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.3.8.0", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_380.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_480.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.4.8.0", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_480.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_Time.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("0.0.0.9.4", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtTF100m31_Time.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_Event.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("0.0.C.7.10", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustEvent(str);
+                }
+                catch { }
+
+                rtbTF100m31_Event.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1801.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1811.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1811.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1821.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1821.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1831.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1831.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2801.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2811.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2811.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2821.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2821.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2831.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.8.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2831.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_3801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.3.8.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_3801.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_4801.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.4.8.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_4801.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_MonthTime.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.0.1.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustTime(str);
+                }
+                catch { }
+
+                txtTF100m31_MonthTime.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1601.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.6.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1601.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1611.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.6.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1611.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1621.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.6.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1621.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_1631.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.6.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_1631.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2601.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.6.0.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2601.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2611.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.6.1.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2611.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2621.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.6.2.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+
+                txtTF100m31_2621.Text = str;
+            }
+            if (chkTF100m31.Checked && chkTF100m31_2631.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.2.6.3.1", txtTF100m31_Seri.Text, "02", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustMD(str);
+                }
+                catch { }
+
+                txtTF100m31_2631.Text = str;
+            }
 
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");
         }
@@ -694,6 +1058,56 @@ namespace RFIECTool
             string sendHex = CreateFrameThau(data, seri, manu, metertype);
             string strData = SendCOMThau(sendHex);
             return strData;
+        }
+
+        public string AddRemoveRetail(byte num, string buf)
+        {
+            string temp = buf;
+            string zero_pad = "";
+            int pos1 = temp.IndexOf('.');
+            int pos2 = temp.IndexOf('*');
+            int pos = (pos2 - pos1);
+
+            if ((num + 1) > pos) // can them 000000
+            {
+                int num_add = 1 + num - pos;
+                for (UInt16 i = 0; i < num_add; i++)
+                {
+                    zero_pad = zero_pad.Insert(0, "0");
+                }
+                buf = buf.Insert(pos2, zero_pad);
+                // (1234.6*kWh)
+            }
+            else if ((num + 1) < pos) // can bot byte 0
+            {
+                int num_add = pos - num - 1;
+                buf = temp.Remove(pos1 + num + 1, num_add);
+            }
+            return buf;
+        }
+
+        public string AdjustEvent(string buf)
+        {
+            // (198)(123456789012)(987654321087)
+            int pos = buf.IndexOf(")");
+            buf = buf.Remove(0, pos + 1);
+            buf = buf.Remove(11, 2);
+            buf = buf.Insert(12, "(85)\r\n");
+            buf = buf.Remove(buf.Length - 3, 2);
+            buf = buf.Insert(buf.Length, "(86)\r\n");
+            return buf;
+        }
+
+        public string AdjustMD(string buf)
+        {
+            buf = buf.Remove(buf.Length - 3, 2);
+            return buf;
+        }
+
+        public string AdjustTime(string buf)
+        {
+            buf = buf.Remove(buf.Length - 3, 2);
+            return buf;
         }
     }
 }

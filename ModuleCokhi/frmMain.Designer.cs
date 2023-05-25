@@ -201,9 +201,8 @@
             this.txtTF100m31_2801 = new System.Windows.Forms.TextBox();
             this.textBox71 = new System.Windows.Forms.TextBox();
             this.chkTF100m31_2801 = new System.Windows.Forms.CheckBox();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.chkTF100m31_Event = new System.Windows.Forms.CheckBox();
             this.txtTF100m31_2811 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
             this.chkTF100m31_2811 = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTF100m31_2821 = new System.Windows.Forms.TextBox();
@@ -237,6 +236,7 @@
             this.chkTF100m31_1631 = new System.Windows.Forms.CheckBox();
             this.txtTF100m31_2601 = new System.Windows.Forms.TextBox();
             this.btnReadThau = new System.Windows.Forms.Button();
+            this.rtbTF100m31_Event = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -493,7 +493,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 134);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 497);
+            this.tabControl1.Size = new System.Drawing.Size(1041, 549);
             this.tabControl1.TabIndex = 36;
             // 
             // tabPage1
@@ -509,6 +509,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.rtbTF100m31_Event);
             this.tabPage2.Controls.Add(this.label24);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.label22);
@@ -654,9 +655,8 @@
             this.tabPage2.Controls.Add(this.txtTF100m31_2801);
             this.tabPage2.Controls.Add(this.textBox71);
             this.tabPage2.Controls.Add(this.chkTF100m31_2801);
-            this.tabPage2.Controls.Add(this.checkBox24);
+            this.tabPage2.Controls.Add(this.chkTF100m31_Event);
             this.tabPage2.Controls.Add(this.txtTF100m31_2811);
-            this.tabPage2.Controls.Add(this.textBox25);
             this.tabPage2.Controls.Add(this.chkTF100m31_2811);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.txtTF100m31_2821);
@@ -692,7 +692,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 471);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 523);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đọc ds";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -818,7 +818,7 @@
             // checkBox25
             // 
             this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(490, 479);
+            this.checkBox25.Location = new System.Drawing.Point(490, 475);
             this.checkBox25.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox25.Name = "checkBox25";
             this.checkBox25.Size = new System.Drawing.Size(54, 17);
@@ -839,7 +839,7 @@
             // textBox26
             // 
             this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(544, 479);
+            this.textBox26.Location = new System.Drawing.Point(547, 475);
             this.textBox26.Margin = new System.Windows.Forms.Padding(2);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(164, 19);
@@ -941,7 +941,7 @@
             // checkBox38
             // 
             this.checkBox38.AutoSize = true;
-            this.checkBox38.Location = new System.Drawing.Point(629, 445);
+            this.checkBox38.Location = new System.Drawing.Point(628, 445);
             this.checkBox38.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox38.Name = "checkBox38";
             this.checkBox38.Size = new System.Drawing.Size(49, 17);
@@ -2164,16 +2164,16 @@
             this.chkTF100m31_2801.Text = "2801";
             this.chkTF100m31_2801.UseVisualStyleBackColor = true;
             // 
-            // checkBox24
+            // chkTF100m31_Event
             // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(8, 479);
-            this.checkBox24.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(54, 17);
-            this.checkBox24.TabIndex = 320;
-            this.checkBox24.Text = "Event";
-            this.checkBox24.UseVisualStyleBackColor = true;
+            this.chkTF100m31_Event.AutoSize = true;
+            this.chkTF100m31_Event.Location = new System.Drawing.Point(12, 473);
+            this.chkTF100m31_Event.Margin = new System.Windows.Forms.Padding(2);
+            this.chkTF100m31_Event.Name = "chkTF100m31_Event";
+            this.chkTF100m31_Event.Size = new System.Drawing.Size(54, 17);
+            this.chkTF100m31_Event.TabIndex = 320;
+            this.chkTF100m31_Event.Text = "Event";
+            this.chkTF100m31_Event.UseVisualStyleBackColor = true;
             // 
             // txtTF100m31_2811
             // 
@@ -2183,15 +2183,6 @@
             this.txtTF100m31_2811.Name = "txtTF100m31_2811";
             this.txtTF100m31_2811.Size = new System.Drawing.Size(76, 19);
             this.txtTF100m31_2811.TabIndex = 284;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(69, 477);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(164, 19);
-            this.textBox25.TabIndex = 319;
             // 
             // chkTF100m31_2811
             // 
@@ -2289,7 +2280,7 @@
             // chkTF100m31_MonthTime
             // 
             this.chkTF100m31_MonthTime.AutoSize = true;
-            this.chkTF100m31_MonthTime.Location = new System.Drawing.Point(151, 445);
+            this.chkTF100m31_MonthTime.Location = new System.Drawing.Point(150, 445);
             this.chkTF100m31_MonthTime.Margin = new System.Windows.Forms.Padding(2);
             this.chkTF100m31_MonthTime.Name = "chkTF100m31_MonthTime";
             this.chkTF100m31_MonthTime.Size = new System.Drawing.Size(49, 17);
@@ -2527,11 +2518,19 @@
             this.btnReadThau.UseVisualStyleBackColor = true;
             this.btnReadThau.Click += new System.EventHandler(this.btnReadThau_Click);
             // 
+            // rtbTF100m31_Event
+            // 
+            this.rtbTF100m31_Event.Location = new System.Drawing.Point(69, 467);
+            this.rtbTF100m31_Event.Name = "rtbTF100m31_Event";
+            this.rtbTF100m31_Event.Size = new System.Drawing.Size(247, 49);
+            this.rtbTF100m31_Event.TabIndex = 398;
+            this.rtbTF100m31_Event.Text = "";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 632);
+            this.ClientSize = new System.Drawing.Size(1055, 684);
             this.Controls.Add(this.btnReadThau);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.cmbManufacture);
@@ -2741,9 +2740,8 @@
         private System.Windows.Forms.TextBox txtTF100m31_2801;
         private System.Windows.Forms.TextBox textBox71;
         private System.Windows.Forms.CheckBox chkTF100m31_2801;
-        private System.Windows.Forms.CheckBox checkBox24;
+        private System.Windows.Forms.CheckBox chkTF100m31_Event;
         private System.Windows.Forms.TextBox txtTF100m31_2811;
-        private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.CheckBox chkTF100m31_2811;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtTF100m31_2821;
@@ -2783,6 +2781,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.RichTextBox rtbTF100m31_Event;
     }
 }
 
