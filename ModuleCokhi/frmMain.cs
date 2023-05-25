@@ -635,7 +635,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.0", txtTF100P31_Seri.Text, "02", "01");
+                    str = ReadDataThau("1.0.1.8.0", txtTF100P31_Seri.Text, "02", "02");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -647,12 +647,37 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.3.8.0", txtTF100P31_Seri.Text, "02", "01");
+                    str = ReadDataThau("1.0.3.8.0", txtTF100P31_Seri.Text, "02", "02");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
                 txtTF100P31_380.Text = str;
                 txtTF100P31_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            if (chkDTS273P1T.Checked && chkDTS273P1T_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtDTS273P1T_Seri.Text, "03", "02");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtDTS273P1T_180.Text = str;
+                txtDTS273P1T_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            if (chkDTS273P1T.Checked && chkDTS273P1T_380.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.3.8.0", txtDTS273P1T_Seri.Text, "03", "02");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtDTS273P1T_380.Text = str;
+                txtDTS273P1T_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             }
 
             MyLib.NoticeInfo("Hoàn thành!", "Thông tin");

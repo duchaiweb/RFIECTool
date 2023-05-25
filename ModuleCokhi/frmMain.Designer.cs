@@ -63,34 +63,34 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.checkBox76 = new System.Windows.Forms.CheckBox();
-            this.checkBox78 = new System.Windows.Forms.CheckBox();
+            this.chkDTS273P1T = new System.Windows.Forms.CheckBox();
             this.textBox81 = new System.Windows.Forms.TextBox();
             this.checkBox69 = new System.Windows.Forms.CheckBox();
             this.txtSF80C21_180 = new System.Windows.Forms.TextBox();
             this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.textBox83 = new System.Windows.Forms.TextBox();
+            this.txtDTS273P1T_Seri = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.txtTF100P31_180 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTF100P31_380 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox84 = new System.Windows.Forms.TextBox();
+            this.txtDTS273P1T_Time = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.checkBox79 = new System.Windows.Forms.CheckBox();
+            this.chkDTS273P1T_380 = new System.Windows.Forms.CheckBox();
             this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.txtSF80C21_Time = new System.Windows.Forms.TextBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
-            this.checkBox80 = new System.Windows.Forms.CheckBox();
+            this.chkDTS273P1T_180 = new System.Windows.Forms.CheckBox();
             this.checkBox39 = new System.Windows.Forms.CheckBox();
             this.chkSF80C21_180 = new System.Windows.Forms.CheckBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
-            this.textBox85 = new System.Windows.Forms.TextBox();
+            this.txtDTS273P1T_380 = new System.Windows.Forms.TextBox();
             this.checkBox40 = new System.Windows.Forms.CheckBox();
             this.chkTF100P31_180 = new System.Windows.Forms.CheckBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox86 = new System.Windows.Forms.TextBox();
+            this.txtDTS273P1T_180 = new System.Windows.Forms.TextBox();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
             this.chkTF100P31_380 = new System.Windows.Forms.CheckBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
@@ -516,34 +516,34 @@
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.checkBox76);
-            this.tabPage2.Controls.Add(this.checkBox78);
+            this.tabPage2.Controls.Add(this.chkDTS273P1T);
             this.tabPage2.Controls.Add(this.textBox81);
             this.tabPage2.Controls.Add(this.checkBox69);
             this.tabPage2.Controls.Add(this.txtSF80C21_180);
             this.tabPage2.Controls.Add(this.checkBox25);
-            this.tabPage2.Controls.Add(this.textBox83);
+            this.tabPage2.Controls.Add(this.txtDTS273P1T_Seri);
             this.tabPage2.Controls.Add(this.textBox26);
             this.tabPage2.Controls.Add(this.txtTF100P31_180);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.txtTF100P31_380);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox84);
+            this.tabPage2.Controls.Add(this.txtDTS273P1T_Time);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label50);
-            this.tabPage2.Controls.Add(this.checkBox79);
+            this.tabPage2.Controls.Add(this.chkDTS273P1T_380);
             this.tabPage2.Controls.Add(this.checkBox38);
             this.tabPage2.Controls.Add(this.txtSF80C21_Time);
             this.tabPage2.Controls.Add(this.textBox41);
-            this.tabPage2.Controls.Add(this.checkBox80);
+            this.tabPage2.Controls.Add(this.chkDTS273P1T_180);
             this.tabPage2.Controls.Add(this.checkBox39);
             this.tabPage2.Controls.Add(this.chkSF80C21_180);
             this.tabPage2.Controls.Add(this.textBox42);
-            this.tabPage2.Controls.Add(this.textBox85);
+            this.tabPage2.Controls.Add(this.txtDTS273P1T_380);
             this.tabPage2.Controls.Add(this.checkBox40);
             this.tabPage2.Controls.Add(this.chkTF100P31_180);
             this.tabPage2.Controls.Add(this.textBox43);
-            this.tabPage2.Controls.Add(this.textBox86);
+            this.tabPage2.Controls.Add(this.txtDTS273P1T_180);
             this.tabPage2.Controls.Add(this.checkBox41);
             this.tabPage2.Controls.Add(this.chkTF100P31_380);
             this.tabPage2.Controls.Add(this.textBox44);
@@ -723,7 +723,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(625, 142);
+            this.label22.Location = new System.Drawing.Point(625, 134);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(76, 13);
@@ -734,7 +734,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(625, 93);
+            this.label21.Location = new System.Drawing.Point(625, 95);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(65, 13);
@@ -774,16 +774,16 @@
             this.checkBox76.Text = "TF100m-31";
             this.checkBox76.UseVisualStyleBackColor = true;
             // 
-            // checkBox78
+            // chkDTS273P1T
             // 
-            this.checkBox78.AutoSize = true;
-            this.checkBox78.Location = new System.Drawing.Point(11, 143);
-            this.checkBox78.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox78.Name = "checkBox78";
-            this.checkBox78.Size = new System.Drawing.Size(89, 17);
-            this.checkBox78.TabIndex = 308;
-            this.checkBox78.Text = "DTS27 3P1T";
-            this.checkBox78.UseVisualStyleBackColor = true;
+            this.chkDTS273P1T.AutoSize = true;
+            this.chkDTS273P1T.Location = new System.Drawing.Point(11, 132);
+            this.chkDTS273P1T.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDTS273P1T.Name = "chkDTS273P1T";
+            this.chkDTS273P1T.Size = new System.Drawing.Size(89, 17);
+            this.chkDTS273P1T.TabIndex = 308;
+            this.chkDTS273P1T.Text = "DTS27 3P1T";
+            this.chkDTS273P1T.UseVisualStyleBackColor = true;
             // 
             // textBox81
             // 
@@ -826,15 +826,15 @@
             this.checkBox25.Text = "Event";
             this.checkBox25.UseVisualStyleBackColor = true;
             // 
-            // textBox83
+            // txtDTS273P1T_Seri
             // 
-            this.textBox83.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox83.Location = new System.Drawing.Point(106, 141);
-            this.textBox83.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox83.Name = "textBox83";
-            this.textBox83.Size = new System.Drawing.Size(81, 19);
-            this.textBox83.TabIndex = 307;
-            this.textBox83.Text = "001936035392";
+            this.txtDTS273P1T_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDTS273P1T_Seri.Location = new System.Drawing.Point(103, 131);
+            this.txtDTS273P1T_Seri.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDTS273P1T_Seri.Name = "txtDTS273P1T_Seri";
+            this.txtDTS273P1T_Seri.Size = new System.Drawing.Size(81, 19);
+            this.txtDTS273P1T_Seri.TabIndex = 307;
+            this.txtDTS273P1T_Seri.Text = "001936035392";
             // 
             // textBox26
             // 
@@ -848,7 +848,7 @@
             // txtTF100P31_180
             // 
             this.txtTF100P31_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTF100P31_180.Location = new System.Drawing.Point(229, 90);
+            this.txtTF100P31_180.Location = new System.Drawing.Point(229, 92);
             this.txtTF100P31_180.Margin = new System.Windows.Forms.Padding(2);
             this.txtTF100P31_180.Name = "txtTF100P31_180";
             this.txtTF100P31_180.Size = new System.Drawing.Size(76, 19);
@@ -868,7 +868,7 @@
             // txtTF100P31_380
             // 
             this.txtTF100P31_380.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTF100P31_380.Location = new System.Drawing.Point(359, 90);
+            this.txtTF100P31_380.Location = new System.Drawing.Point(359, 92);
             this.txtTF100P31_380.Margin = new System.Windows.Forms.Padding(2);
             this.txtTF100P31_380.Name = "txtTF100P31_380";
             this.txtTF100P31_380.Size = new System.Drawing.Size(86, 19);
@@ -885,14 +885,14 @@
             this.label12.TabIndex = 385;
             this.label12.Text = "Monthy Energy";
             // 
-            // textBox84
+            // txtDTS273P1T_Time
             // 
-            this.textBox84.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox84.Location = new System.Drawing.Point(494, 141);
-            this.textBox84.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox84.Name = "textBox84";
-            this.textBox84.Size = new System.Drawing.Size(116, 19);
-            this.textBox84.TabIndex = 305;
+            this.txtDTS273P1T_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDTS273P1T_Time.Location = new System.Drawing.Point(487, 131);
+            this.txtDTS273P1T_Time.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDTS273P1T_Time.Name = "txtDTS273P1T_Time";
+            this.txtDTS273P1T_Time.Size = new System.Drawing.Size(116, 19);
+            this.txtDTS273P1T_Time.TabIndex = 305;
             // 
             // label13
             // 
@@ -909,7 +909,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(464, 143);
+            this.label14.Location = new System.Drawing.Point(457, 134);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 13);
@@ -927,16 +927,16 @@
             this.label50.TabIndex = 269;
             this.label50.Text = "Time";
             // 
-            // checkBox79
+            // chkDTS273P1T_380
             // 
-            this.checkBox79.AutoSize = true;
-            this.checkBox79.Location = new System.Drawing.Point(320, 141);
-            this.checkBox79.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox79.Name = "checkBox79";
-            this.checkBox79.Size = new System.Drawing.Size(44, 17);
-            this.checkBox79.TabIndex = 303;
-            this.checkBox79.Text = "380";
-            this.checkBox79.UseVisualStyleBackColor = true;
+            this.chkDTS273P1T_380.AutoSize = true;
+            this.chkDTS273P1T_380.Location = new System.Drawing.Point(320, 132);
+            this.chkDTS273P1T_380.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDTS273P1T_380.Name = "chkDTS273P1T_380";
+            this.chkDTS273P1T_380.Size = new System.Drawing.Size(44, 17);
+            this.chkDTS273P1T_380.TabIndex = 303;
+            this.chkDTS273P1T_380.Text = "380";
+            this.chkDTS273P1T_380.UseVisualStyleBackColor = true;
             // 
             // checkBox38
             // 
@@ -967,16 +967,16 @@
             this.textBox41.Size = new System.Drawing.Size(76, 19);
             this.textBox41.TabIndex = 380;
             // 
-            // checkBox80
+            // chkDTS273P1T_180
             // 
-            this.checkBox80.AutoSize = true;
-            this.checkBox80.Location = new System.Drawing.Point(191, 142);
-            this.checkBox80.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox80.Name = "checkBox80";
-            this.checkBox80.Size = new System.Drawing.Size(44, 17);
-            this.checkBox80.TabIndex = 302;
-            this.checkBox80.Text = "180";
-            this.checkBox80.UseVisualStyleBackColor = true;
+            this.chkDTS273P1T_180.AutoSize = true;
+            this.chkDTS273P1T_180.Location = new System.Drawing.Point(191, 132);
+            this.chkDTS273P1T_180.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDTS273P1T_180.Name = "chkDTS273P1T_180";
+            this.chkDTS273P1T_180.Size = new System.Drawing.Size(44, 17);
+            this.chkDTS273P1T_180.TabIndex = 302;
+            this.chkDTS273P1T_180.Text = "180";
+            this.chkDTS273P1T_180.UseVisualStyleBackColor = true;
             // 
             // checkBox39
             // 
@@ -1009,14 +1009,14 @@
             this.textBox42.Size = new System.Drawing.Size(76, 19);
             this.textBox42.TabIndex = 378;
             // 
-            // textBox85
+            // txtDTS273P1T_380
             // 
-            this.textBox85.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox85.Location = new System.Drawing.Point(366, 141);
-            this.textBox85.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox85.Name = "textBox85";
-            this.textBox85.Size = new System.Drawing.Size(86, 19);
-            this.textBox85.TabIndex = 301;
+            this.txtDTS273P1T_380.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDTS273P1T_380.Location = new System.Drawing.Point(366, 131);
+            this.txtDTS273P1T_380.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDTS273P1T_380.Name = "txtDTS273P1T_380";
+            this.txtDTS273P1T_380.Size = new System.Drawing.Size(86, 19);
+            this.txtDTS273P1T_380.TabIndex = 301;
             // 
             // checkBox40
             // 
@@ -1032,7 +1032,7 @@
             // chkTF100P31_180
             // 
             this.chkTF100P31_180.AutoSize = true;
-            this.chkTF100P31_180.Location = new System.Drawing.Point(184, 91);
+            this.chkTF100P31_180.Location = new System.Drawing.Point(184, 93);
             this.chkTF100P31_180.Margin = new System.Windows.Forms.Padding(2);
             this.chkTF100P31_180.Name = "chkTF100P31_180";
             this.chkTF100P31_180.Size = new System.Drawing.Size(44, 17);
@@ -1049,14 +1049,14 @@
             this.textBox43.Size = new System.Drawing.Size(76, 19);
             this.textBox43.TabIndex = 376;
             // 
-            // textBox86
+            // txtDTS273P1T_180
             // 
-            this.textBox86.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox86.Location = new System.Drawing.Point(236, 141);
-            this.textBox86.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox86.Name = "textBox86";
-            this.textBox86.Size = new System.Drawing.Size(76, 19);
-            this.textBox86.TabIndex = 300;
+            this.txtDTS273P1T_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDTS273P1T_180.Location = new System.Drawing.Point(236, 131);
+            this.txtDTS273P1T_180.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDTS273P1T_180.Name = "txtDTS273P1T_180";
+            this.txtDTS273P1T_180.Size = new System.Drawing.Size(76, 19);
+            this.txtDTS273P1T_180.TabIndex = 300;
             // 
             // checkBox41
             // 
@@ -1072,7 +1072,7 @@
             // chkTF100P31_380
             // 
             this.chkTF100P31_380.AutoSize = true;
-            this.chkTF100P31_380.Location = new System.Drawing.Point(313, 91);
+            this.chkTF100P31_380.Location = new System.Drawing.Point(313, 93);
             this.chkTF100P31_380.Margin = new System.Windows.Forms.Padding(2);
             this.chkTF100P31_380.Name = "chkTF100P31_380";
             this.chkTF100P31_380.Size = new System.Drawing.Size(44, 17);
@@ -1092,7 +1092,7 @@
             // chkTF100P31
             // 
             this.chkTF100P31.AutoSize = true;
-            this.chkTF100P31.Location = new System.Drawing.Point(11, 91);
+            this.chkTF100P31.Location = new System.Drawing.Point(11, 93);
             this.chkTF100P31.Margin = new System.Windows.Forms.Padding(2);
             this.chkTF100P31.Name = "chkTF100P31";
             this.chkTF100P31.Size = new System.Drawing.Size(79, 17);
@@ -1115,7 +1115,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(457, 93);
+            this.label15.Location = new System.Drawing.Point(457, 95);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 13);
@@ -1134,7 +1134,7 @@
             // txtTF100P31_Seri
             // 
             this.txtTF100P31_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTF100P31_Seri.Location = new System.Drawing.Point(93, 90);
+            this.txtTF100P31_Seri.Location = new System.Drawing.Point(93, 92);
             this.txtTF100P31_Seri.Margin = new System.Windows.Forms.Padding(2);
             this.txtTF100P31_Seri.Name = "txtTF100P31_Seri";
             this.txtTF100P31_Seri.Size = new System.Drawing.Size(81, 19);
@@ -1155,7 +1155,7 @@
             // txtTF100P31_Time
             // 
             this.txtTF100P31_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTF100P31_Time.Location = new System.Drawing.Point(487, 90);
+            this.txtTF100P31_Time.Location = new System.Drawing.Point(487, 92);
             this.txtTF100P31_Time.Margin = new System.Windows.Forms.Padding(2);
             this.txtTF100P31_Time.Name = "txtTF100P31_Time";
             this.txtTF100P31_Time.Size = new System.Drawing.Size(116, 19);
@@ -2602,21 +2602,21 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox checkBox78;
+        private System.Windows.Forms.CheckBox chkDTS273P1T;
         private System.Windows.Forms.TextBox txtSF80C21_180;
-        private System.Windows.Forms.TextBox textBox83;
+        private System.Windows.Forms.TextBox txtDTS273P1T_Seri;
         private System.Windows.Forms.TextBox txtTF100P31_180;
         private System.Windows.Forms.TextBox txtTF100P31_380;
-        private System.Windows.Forms.TextBox textBox84;
+        private System.Windows.Forms.TextBox txtDTS273P1T_Time;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.CheckBox checkBox79;
+        private System.Windows.Forms.CheckBox chkDTS273P1T_380;
         private System.Windows.Forms.TextBox txtSF80C21_Time;
-        private System.Windows.Forms.CheckBox checkBox80;
+        private System.Windows.Forms.CheckBox chkDTS273P1T_180;
         private System.Windows.Forms.CheckBox chkSF80C21_180;
-        private System.Windows.Forms.TextBox textBox85;
+        private System.Windows.Forms.TextBox txtDTS273P1T_380;
         private System.Windows.Forms.CheckBox chkTF100P31_180;
-        private System.Windows.Forms.TextBox textBox86;
+        private System.Windows.Forms.TextBox txtDTS273P1T_180;
         private System.Windows.Forms.CheckBox chkTF100P31_380;
         private System.Windows.Forms.CheckBox chkTF100P31;
         private System.Windows.Forms.Label label15;
