@@ -982,6 +982,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.0.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -999,6 +1000,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.1.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1016,6 +1018,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.2.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1033,6 +1036,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.3.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1050,6 +1054,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.0.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1067,6 +1072,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.1.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1084,6 +1090,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.2.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1101,6 +1108,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.3.1", txtTF100m31_Seri.Text, "02", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1248,7 +1256,7 @@ namespace RFIECTool
                 str = "";
                 try
                 {
-                    str = ReadDataThau("0.0.C.7.10", txtDTS273P3T_Seri.Text, "02", "03");
+                    str = ReadDataThau("0.0.C.7.10", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustEvent(str);
                 }
@@ -1376,6 +1384,19 @@ namespace RFIECTool
 
                 txtDTS273P3T_4801.Text = str;
             }
+            if (chkDTS273P3T.Checked && chkDTS273P3T_MonthTime.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.0.1.3.1", txtDTS273P3T_Seri.Text, "03", "03");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                    str = AdjustTime(str);
+                }
+                catch { }
+
+                txtDTS273P3T_MonthTime.Text = str;
+            }
             if (chkDTS273P3T.Checked && chkDTS273P3T_1601.Checked)
             {
                 str = "";
@@ -1384,6 +1405,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.0.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1401,6 +1423,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.1.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1418,6 +1441,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.2.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1435,6 +1459,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.1.6.3.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1452,6 +1477,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.0.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1469,6 +1495,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.1.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1486,6 +1513,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.2.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";
@@ -1503,6 +1531,7 @@ namespace RFIECTool
                     str = ReadDataThau("1.0.2.6.3.1", txtDTS273P3T_Seri.Text, "03", "03");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                     str = AdjustMD(str);
+                    str = AddRemoveRetail(3, str);
                     if (MyLib.countChar('(', str) < 2)
                     {
                         str += "(0000000000)";

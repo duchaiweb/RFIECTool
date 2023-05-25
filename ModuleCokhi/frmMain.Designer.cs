@@ -80,9 +80,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.chkDTS273P1T_380 = new System.Windows.Forms.CheckBox();
-            this.chkDTS273P3T_MonthyTime = new System.Windows.Forms.CheckBox();
+            this.chkDTS273P3T_MonthTime = new System.Windows.Forms.CheckBox();
             this.txtSF80C21_Time = new System.Windows.Forms.TextBox();
-            this.txtDTS273P3T_MonthyTime = new System.Windows.Forms.TextBox();
+            this.txtDTS273P3T_MonthTime = new System.Windows.Forms.TextBox();
             this.chkDTS273P1T_180 = new System.Windows.Forms.CheckBox();
             this.chkDTS273P3T_Time = new System.Windows.Forms.CheckBox();
             this.chkSF80C21_180 = new System.Windows.Forms.CheckBox();
@@ -533,9 +533,9 @@
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label50);
             this.tabPage2.Controls.Add(this.chkDTS273P1T_380);
-            this.tabPage2.Controls.Add(this.chkDTS273P3T_MonthyTime);
+            this.tabPage2.Controls.Add(this.chkDTS273P3T_MonthTime);
             this.tabPage2.Controls.Add(this.txtSF80C21_Time);
-            this.tabPage2.Controls.Add(this.txtDTS273P3T_MonthyTime);
+            this.tabPage2.Controls.Add(this.txtDTS273P3T_MonthTime);
             this.tabPage2.Controls.Add(this.chkDTS273P1T_180);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_Time);
             this.tabPage2.Controls.Add(this.chkSF80C21_180);
@@ -945,16 +945,16 @@
             this.chkDTS273P1T_380.Text = "380";
             this.chkDTS273P1T_380.UseVisualStyleBackColor = true;
             // 
-            // chkDTS273P3T_MonthyTime
+            // chkDTS273P3T_MonthTime
             // 
-            this.chkDTS273P3T_MonthyTime.AutoSize = true;
-            this.chkDTS273P3T_MonthyTime.Location = new System.Drawing.Point(628, 445);
-            this.chkDTS273P3T_MonthyTime.Margin = new System.Windows.Forms.Padding(2);
-            this.chkDTS273P3T_MonthyTime.Name = "chkDTS273P3T_MonthyTime";
-            this.chkDTS273P3T_MonthyTime.Size = new System.Drawing.Size(49, 17);
-            this.chkDTS273P3T_MonthyTime.TabIndex = 381;
-            this.chkDTS273P3T_MonthyTime.Text = "Time";
-            this.chkDTS273P3T_MonthyTime.UseVisualStyleBackColor = true;
+            this.chkDTS273P3T_MonthTime.AutoSize = true;
+            this.chkDTS273P3T_MonthTime.Location = new System.Drawing.Point(628, 445);
+            this.chkDTS273P3T_MonthTime.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDTS273P3T_MonthTime.Name = "chkDTS273P3T_MonthTime";
+            this.chkDTS273P3T_MonthTime.Size = new System.Drawing.Size(49, 17);
+            this.chkDTS273P3T_MonthTime.TabIndex = 381;
+            this.chkDTS273P3T_MonthTime.Text = "Time";
+            this.chkDTS273P3T_MonthTime.UseVisualStyleBackColor = true;
             // 
             // txtSF80C21_Time
             // 
@@ -965,14 +965,14 @@
             this.txtSF80C21_Time.Size = new System.Drawing.Size(116, 19);
             this.txtSF80C21_Time.TabIndex = 270;
             // 
-            // txtDTS273P3T_MonthyTime
+            // txtDTS273P3T_MonthTime
             // 
-            this.txtDTS273P3T_MonthyTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDTS273P3T_MonthyTime.Location = new System.Drawing.Point(679, 444);
-            this.txtDTS273P3T_MonthyTime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDTS273P3T_MonthyTime.Name = "txtDTS273P3T_MonthyTime";
-            this.txtDTS273P3T_MonthyTime.Size = new System.Drawing.Size(76, 19);
-            this.txtDTS273P3T_MonthyTime.TabIndex = 380;
+            this.txtDTS273P3T_MonthTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDTS273P3T_MonthTime.Location = new System.Drawing.Point(679, 444);
+            this.txtDTS273P3T_MonthTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDTS273P3T_MonthTime.Name = "txtDTS273P3T_MonthTime";
+            this.txtDTS273P3T_MonthTime.Size = new System.Drawing.Size(76, 19);
+            this.txtDTS273P3T_MonthTime.TabIndex = 380;
             // 
             // chkDTS273P1T_180
             // 
@@ -2647,8 +2647,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox chkDTS273P3T_MonthyTime;
-        private System.Windows.Forms.TextBox txtDTS273P3T_MonthyTime;
+        private System.Windows.Forms.CheckBox chkDTS273P3T_MonthTime;
+        private System.Windows.Forms.TextBox txtDTS273P3T_MonthTime;
         private System.Windows.Forms.CheckBox chkDTS273P3T_Time;
         private System.Windows.Forms.TextBox txtDTS273P3T_Time;
         private System.Windows.Forms.CheckBox chkDTS273P3T_2631;
