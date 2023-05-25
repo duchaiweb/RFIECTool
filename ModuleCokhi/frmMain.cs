@@ -606,12 +606,13 @@ namespace RFIECTool
         private void btnReadThau_Click(object sender, EventArgs e)
         {
             string str = "";
+
             if (chkSF80C21.Checked && chkSF80C21_180.Checked)
             {
                 str = "";
                 try
                 {
-                    str = ReadDataThau("1.0.1.8.0", Txt_SF80C21_1_Serial.Text, "02", "01");
+                    str = ReadDataThau("1.0.1.8.0", txtSF80C21_Seri.Text, "02", "01");
                     str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
                 }
                 catch { }
@@ -630,6 +631,32 @@ namespace RFIECTool
                 txtDDS26D_180.Text = str;
                 txtDDS26D_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
             }
+
+            if (chkSF80C21_2.Checked && chkSF80C21_2_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtSF80C21_2_Seri.Text, "02", "01");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtSF80C21_2_180.Text = str;
+                txtSF80C21_2_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
+            }
+            if (chkDDS26D_2.Checked && chkDDS26D_2_180.Checked)
+            {
+                str = "";
+                try
+                {
+                    str = ReadDataThau("1.0.1.8.0", txtDDS26D_2_Seri.Text, "03", "02");
+                    str = GetValue(MyLib.ByteArrToASCII(MyLib.HexStringToArrByte(MyLib.FormatHexString(str.Substring(42, str.Length - 48)))));
+                }
+                catch { }
+                txtDDS26D_2_180.Text = str;
+                txtDDS26D_2_Time.Text = "(" + DateTime.Now.ToString("yyMMddHHmm") + ")";
+            }
+
             if (chkTF100P31.Checked && chkTF100P31_180.Checked)
             {
                 str = "";

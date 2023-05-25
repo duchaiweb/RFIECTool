@@ -56,6 +56,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.rtbDTS273P3T_Event = new System.Windows.Forms.RichTextBox();
+            this.rtbTF100m31_Event = new System.Windows.Forms.RichTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -101,35 +103,35 @@
             this.chkDTS273P3T_2601 = new System.Windows.Forms.CheckBox();
             this.txtTF100P31_Time = new System.Windows.Forms.TextBox();
             this.txtDTS273P3T_2601 = new System.Windows.Forms.TextBox();
-            this.Txt_SF80C21_1_Serial = new System.Windows.Forms.TextBox();
+            this.txtSF80C21_Seri = new System.Windows.Forms.TextBox();
             this.chkDTS273P3T_1631 = new System.Windows.Forms.CheckBox();
-            this.checkBox72 = new System.Windows.Forms.CheckBox();
+            this.chkDDS26D_2 = new System.Windows.Forms.CheckBox();
             this.txtDTS273P3T_1631 = new System.Windows.Forms.TextBox();
             this.chkSF80C21 = new System.Windows.Forms.CheckBox();
             this.chkDTS273P3T_1621 = new System.Windows.Forms.CheckBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
+            this.txtDDS26D_2_Seri = new System.Windows.Forms.TextBox();
             this.txtDTS273P3T_1621 = new System.Windows.Forms.TextBox();
-            this.textBox74 = new System.Windows.Forms.TextBox();
+            this.txtSF80C21_2_180 = new System.Windows.Forms.TextBox();
             this.chkDTS273P3T_1611 = new System.Windows.Forms.CheckBox();
-            this.checkBox73 = new System.Windows.Forms.CheckBox();
+            this.chkDDS26D_2_180 = new System.Windows.Forms.CheckBox();
             this.txtDTS273P3T_1611 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.chkDTS273P3T_1601 = new System.Windows.Forms.CheckBox();
-            this.textBox76 = new System.Windows.Forms.TextBox();
+            this.txtDDS26D_2_Time = new System.Windows.Forms.TextBox();
             this.txtDTS273P3T_1601 = new System.Windows.Forms.TextBox();
-            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.txtSF80C21_2_Time = new System.Windows.Forms.TextBox();
             this.txtDTS273P3T_Seri = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkDTS273P3T_4801 = new System.Windows.Forms.CheckBox();
-            this.checkBox71 = new System.Windows.Forms.CheckBox();
+            this.chkSF80C21_2_180 = new System.Windows.Forms.CheckBox();
             this.txtDTS273P3T_4801 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
+            this.txtDDS26D_2_180 = new System.Windows.Forms.TextBox();
             this.chkDTS273P3T_3801 = new System.Windows.Forms.CheckBox();
-            this.Tb_SF80C21_2 = new System.Windows.Forms.TextBox();
+            this.txtSF80C21_2_Seri = new System.Windows.Forms.TextBox();
             this.txtDTS273P3T_3801 = new System.Windows.Forms.TextBox();
             this.chkDDS26D = new System.Windows.Forms.CheckBox();
             this.chkDTS273P3T_2831 = new System.Windows.Forms.CheckBox();
-            this.chb_SF80C21_2 = new System.Windows.Forms.CheckBox();
+            this.chkSF80C21_2 = new System.Windows.Forms.CheckBox();
             this.txtDTS273P3T_2831 = new System.Windows.Forms.TextBox();
             this.txtDDS26D_Seri = new System.Windows.Forms.TextBox();
             this.chkDTS273P3T_2821 = new System.Windows.Forms.CheckBox();
@@ -235,8 +237,6 @@
             this.chkTF100m31_1631 = new System.Windows.Forms.CheckBox();
             this.txtTF100m31_2601 = new System.Windows.Forms.TextBox();
             this.btnReadThau = new System.Windows.Forms.Button();
-            this.rtbTF100m31_Event = new System.Windows.Forms.RichTextBox();
-            this.rtbDTS273P3T_Event = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -502,7 +502,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 471);
+            this.tabPage1.Size = new System.Drawing.Size(1033, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đọc tức thời";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -556,35 +556,35 @@
             this.tabPage2.Controls.Add(this.chkDTS273P3T_2601);
             this.tabPage2.Controls.Add(this.txtTF100P31_Time);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_2601);
-            this.tabPage2.Controls.Add(this.Txt_SF80C21_1_Serial);
+            this.tabPage2.Controls.Add(this.txtSF80C21_Seri);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_1631);
-            this.tabPage2.Controls.Add(this.checkBox72);
+            this.tabPage2.Controls.Add(this.chkDDS26D_2);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_1631);
             this.tabPage2.Controls.Add(this.chkSF80C21);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_1621);
-            this.tabPage2.Controls.Add(this.textBox75);
+            this.tabPage2.Controls.Add(this.txtDDS26D_2_Seri);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_1621);
-            this.tabPage2.Controls.Add(this.textBox74);
+            this.tabPage2.Controls.Add(this.txtSF80C21_2_180);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_1611);
-            this.tabPage2.Controls.Add(this.checkBox73);
+            this.tabPage2.Controls.Add(this.chkDDS26D_2_180);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_1611);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_1601);
-            this.tabPage2.Controls.Add(this.textBox76);
+            this.tabPage2.Controls.Add(this.txtDDS26D_2_Time);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_1601);
-            this.tabPage2.Controls.Add(this.textBox73);
+            this.tabPage2.Controls.Add(this.txtSF80C21_2_Time);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_Seri);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_4801);
-            this.tabPage2.Controls.Add(this.checkBox71);
+            this.tabPage2.Controls.Add(this.chkSF80C21_2_180);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_4801);
-            this.tabPage2.Controls.Add(this.textBox77);
+            this.tabPage2.Controls.Add(this.txtDDS26D_2_180);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_3801);
-            this.tabPage2.Controls.Add(this.Tb_SF80C21_2);
+            this.tabPage2.Controls.Add(this.txtSF80C21_2_Seri);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_3801);
             this.tabPage2.Controls.Add(this.chkDDS26D);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_2831);
-            this.tabPage2.Controls.Add(this.chb_SF80C21_2);
+            this.tabPage2.Controls.Add(this.chkSF80C21_2);
             this.tabPage2.Controls.Add(this.txtDTS273P3T_2831);
             this.tabPage2.Controls.Add(this.txtDDS26D_Seri);
             this.tabPage2.Controls.Add(this.chkDTS273P3T_2821);
@@ -696,6 +696,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đọc ds";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // rtbDTS273P3T_Event
+            // 
+            this.rtbDTS273P3T_Event.Location = new System.Drawing.Point(547, 471);
+            this.rtbDTS273P3T_Event.Name = "rtbDTS273P3T_Event";
+            this.rtbDTS273P3T_Event.Size = new System.Drawing.Size(247, 49);
+            this.rtbDTS273P3T_Event.TabIndex = 399;
+            this.rtbDTS273P3T_Event.Text = "";
+            // 
+            // rtbTF100m31_Event
+            // 
+            this.rtbTF100m31_Event.Location = new System.Drawing.Point(69, 467);
+            this.rtbTF100m31_Event.Name = "rtbTF100m31_Event";
+            this.rtbTF100m31_Event.Size = new System.Drawing.Size(247, 49);
+            this.rtbTF100m31_Event.TabIndex = 398;
+            this.rtbTF100m31_Event.Text = "";
             // 
             // label24
             // 
@@ -1161,15 +1177,15 @@
             this.txtDTS273P3T_2601.Size = new System.Drawing.Size(76, 19);
             this.txtDTS273P3T_2601.TabIndex = 370;
             // 
-            // Txt_SF80C21_1_Serial
+            // txtSF80C21_Seri
             // 
-            this.Txt_SF80C21_1_Serial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_SF80C21_1_Serial.Location = new System.Drawing.Point(86, 14);
-            this.Txt_SF80C21_1_Serial.Margin = new System.Windows.Forms.Padding(2);
-            this.Txt_SF80C21_1_Serial.Name = "Txt_SF80C21_1_Serial";
-            this.Txt_SF80C21_1_Serial.Size = new System.Drawing.Size(81, 19);
-            this.Txt_SF80C21_1_Serial.TabIndex = 276;
-            this.Txt_SF80C21_1_Serial.Text = "002211997987";
+            this.txtSF80C21_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSF80C21_Seri.Location = new System.Drawing.Point(86, 14);
+            this.txtSF80C21_Seri.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSF80C21_Seri.Name = "txtSF80C21_Seri";
+            this.txtSF80C21_Seri.Size = new System.Drawing.Size(81, 19);
+            this.txtSF80C21_Seri.TabIndex = 276;
+            this.txtSF80C21_Seri.Text = "002211997987";
             // 
             // chkDTS273P3T_1631
             // 
@@ -1182,16 +1198,16 @@
             this.chkDTS273P3T_1631.Text = "1631";
             this.chkDTS273P3T_1631.UseVisualStyleBackColor = true;
             // 
-            // checkBox72
+            // chkDDS26D_2
             // 
-            this.checkBox72.AutoSize = true;
-            this.checkBox72.Location = new System.Drawing.Point(487, 56);
-            this.checkBox72.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox72.Name = "checkBox72";
-            this.checkBox72.Size = new System.Drawing.Size(69, 17);
-            this.checkBox72.TabIndex = 296;
-            this.checkBox72.Text = "DDS26D";
-            this.checkBox72.UseVisualStyleBackColor = true;
+            this.chkDDS26D_2.AutoSize = true;
+            this.chkDDS26D_2.Location = new System.Drawing.Point(487, 56);
+            this.chkDDS26D_2.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDDS26D_2.Name = "chkDDS26D_2";
+            this.chkDDS26D_2.Size = new System.Drawing.Size(69, 17);
+            this.chkDDS26D_2.TabIndex = 296;
+            this.chkDDS26D_2.Text = "DDS26D";
+            this.chkDDS26D_2.UseVisualStyleBackColor = true;
             // 
             // txtDTS273P3T_1631
             // 
@@ -1224,15 +1240,15 @@
             this.chkDTS273P3T_1621.Text = "1621";
             this.chkDTS273P3T_1621.UseVisualStyleBackColor = true;
             // 
-            // textBox75
+            // txtDDS26D_2_Seri
             // 
-            this.textBox75.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox75.Location = new System.Drawing.Point(562, 55);
-            this.textBox75.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox75.Name = "textBox75";
-            this.textBox75.Size = new System.Drawing.Size(81, 19);
-            this.textBox75.TabIndex = 295;
-            this.textBox75.Text = "0022119979xx";
+            this.txtDDS26D_2_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_2_Seri.Location = new System.Drawing.Point(562, 55);
+            this.txtDDS26D_2_Seri.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_2_Seri.Name = "txtDDS26D_2_Seri";
+            this.txtDDS26D_2_Seri.Size = new System.Drawing.Size(81, 19);
+            this.txtDDS26D_2_Seri.TabIndex = 295;
+            this.txtDDS26D_2_Seri.Text = "0022119979xx";
             // 
             // txtDTS273P3T_1621
             // 
@@ -1243,14 +1259,14 @@
             this.txtDTS273P3T_1621.Size = new System.Drawing.Size(76, 19);
             this.txtDTS273P3T_1621.TabIndex = 366;
             // 
-            // textBox74
+            // txtSF80C21_2_180
             // 
-            this.textBox74.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox74.Location = new System.Drawing.Point(704, 14);
-            this.textBox74.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(76, 19);
-            this.textBox74.TabIndex = 278;
+            this.txtSF80C21_2_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSF80C21_2_180.Location = new System.Drawing.Point(704, 14);
+            this.txtSF80C21_2_180.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSF80C21_2_180.Name = "txtSF80C21_2_180";
+            this.txtSF80C21_2_180.Size = new System.Drawing.Size(76, 19);
+            this.txtSF80C21_2_180.TabIndex = 278;
             // 
             // chkDTS273P3T_1611
             // 
@@ -1263,16 +1279,16 @@
             this.chkDTS273P3T_1611.Text = "1611";
             this.chkDTS273P3T_1611.UseVisualStyleBackColor = true;
             // 
-            // checkBox73
+            // chkDDS26D_2_180
             // 
-            this.checkBox73.AutoSize = true;
-            this.checkBox73.Location = new System.Drawing.Point(659, 56);
-            this.checkBox73.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox73.Name = "checkBox73";
-            this.checkBox73.Size = new System.Drawing.Size(44, 17);
-            this.checkBox73.TabIndex = 294;
-            this.checkBox73.Text = "180";
-            this.checkBox73.UseVisualStyleBackColor = true;
+            this.chkDDS26D_2_180.AutoSize = true;
+            this.chkDDS26D_2_180.Location = new System.Drawing.Point(659, 56);
+            this.chkDDS26D_2_180.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDDS26D_2_180.Name = "chkDDS26D_2_180";
+            this.chkDDS26D_2_180.Size = new System.Drawing.Size(44, 17);
+            this.chkDDS26D_2_180.TabIndex = 294;
+            this.chkDDS26D_2_180.Text = "180";
+            this.chkDDS26D_2_180.UseVisualStyleBackColor = true;
             // 
             // txtDTS273P3T_1611
             // 
@@ -1305,14 +1321,14 @@
             this.chkDTS273P3T_1601.Text = "1601";
             this.chkDTS273P3T_1601.UseVisualStyleBackColor = true;
             // 
-            // textBox76
+            // txtDDS26D_2_Time
             // 
-            this.textBox76.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox76.Location = new System.Drawing.Point(821, 55);
-            this.textBox76.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox76.Name = "textBox76";
-            this.textBox76.Size = new System.Drawing.Size(116, 19);
-            this.textBox76.TabIndex = 293;
+            this.txtDDS26D_2_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_2_Time.Location = new System.Drawing.Point(821, 55);
+            this.txtDDS26D_2_Time.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_2_Time.Name = "txtDDS26D_2_Time";
+            this.txtDDS26D_2_Time.Size = new System.Drawing.Size(116, 19);
+            this.txtDDS26D_2_Time.TabIndex = 293;
             // 
             // txtDTS273P3T_1601
             // 
@@ -1323,14 +1339,14 @@
             this.txtDTS273P3T_1601.Size = new System.Drawing.Size(76, 19);
             this.txtDTS273P3T_1601.TabIndex = 362;
             // 
-            // textBox73
+            // txtSF80C21_2_Time
             // 
-            this.textBox73.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox73.Location = new System.Drawing.Point(821, 14);
-            this.textBox73.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(116, 19);
-            this.textBox73.TabIndex = 280;
+            this.txtSF80C21_2_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSF80C21_2_Time.Location = new System.Drawing.Point(821, 14);
+            this.txtSF80C21_2_Time.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSF80C21_2_Time.Name = "txtSF80C21_2_Time";
+            this.txtSF80C21_2_Time.Size = new System.Drawing.Size(116, 19);
+            this.txtSF80C21_2_Time.TabIndex = 280;
             // 
             // txtDTS273P3T_Seri
             // 
@@ -1364,16 +1380,16 @@
             this.chkDTS273P3T_4801.Text = "4801";
             this.chkDTS273P3T_4801.UseVisualStyleBackColor = true;
             // 
-            // checkBox71
+            // chkSF80C21_2_180
             // 
-            this.checkBox71.AutoSize = true;
-            this.checkBox71.Location = new System.Drawing.Point(659, 15);
-            this.checkBox71.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox71.Name = "checkBox71";
-            this.checkBox71.Size = new System.Drawing.Size(44, 17);
-            this.checkBox71.TabIndex = 281;
-            this.checkBox71.Text = "180";
-            this.checkBox71.UseVisualStyleBackColor = true;
+            this.chkSF80C21_2_180.AutoSize = true;
+            this.chkSF80C21_2_180.Location = new System.Drawing.Point(659, 15);
+            this.chkSF80C21_2_180.Margin = new System.Windows.Forms.Padding(2);
+            this.chkSF80C21_2_180.Name = "chkSF80C21_2_180";
+            this.chkSF80C21_2_180.Size = new System.Drawing.Size(44, 17);
+            this.chkSF80C21_2_180.TabIndex = 281;
+            this.chkSF80C21_2_180.Text = "180";
+            this.chkSF80C21_2_180.UseVisualStyleBackColor = true;
             // 
             // txtDTS273P3T_4801
             // 
@@ -1384,14 +1400,14 @@
             this.txtDTS273P3T_4801.Size = new System.Drawing.Size(76, 19);
             this.txtDTS273P3T_4801.TabIndex = 359;
             // 
-            // textBox77
+            // txtDDS26D_2_180
             // 
-            this.textBox77.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox77.Location = new System.Drawing.Point(704, 55);
-            this.textBox77.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox77.Name = "textBox77";
-            this.textBox77.Size = new System.Drawing.Size(76, 19);
-            this.textBox77.TabIndex = 291;
+            this.txtDDS26D_2_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDDS26D_2_180.Location = new System.Drawing.Point(704, 55);
+            this.txtDDS26D_2_180.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDDS26D_2_180.Name = "txtDDS26D_2_180";
+            this.txtDDS26D_2_180.Size = new System.Drawing.Size(76, 19);
+            this.txtDDS26D_2_180.TabIndex = 291;
             // 
             // chkDTS273P3T_3801
             // 
@@ -1404,15 +1420,15 @@
             this.chkDTS273P3T_3801.Text = "3801";
             this.chkDTS273P3T_3801.UseVisualStyleBackColor = true;
             // 
-            // Tb_SF80C21_2
+            // txtSF80C21_2_Seri
             // 
-            this.Tb_SF80C21_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tb_SF80C21_2.Location = new System.Drawing.Point(562, 14);
-            this.Tb_SF80C21_2.Margin = new System.Windows.Forms.Padding(2);
-            this.Tb_SF80C21_2.Name = "Tb_SF80C21_2";
-            this.Tb_SF80C21_2.Size = new System.Drawing.Size(81, 19);
-            this.Tb_SF80C21_2.TabIndex = 282;
-            this.Tb_SF80C21_2.Text = "0022119979xx";
+            this.txtSF80C21_2_Seri.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSF80C21_2_Seri.Location = new System.Drawing.Point(562, 14);
+            this.txtSF80C21_2_Seri.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSF80C21_2_Seri.Name = "txtSF80C21_2_Seri";
+            this.txtSF80C21_2_Seri.Size = new System.Drawing.Size(81, 19);
+            this.txtSF80C21_2_Seri.TabIndex = 282;
+            this.txtSF80C21_2_Seri.Text = "0022119979xx";
             // 
             // txtDTS273P3T_3801
             // 
@@ -1445,16 +1461,16 @@
             this.chkDTS273P3T_2831.Text = "2831";
             this.chkDTS273P3T_2831.UseVisualStyleBackColor = true;
             // 
-            // chb_SF80C21_2
+            // chkSF80C21_2
             // 
-            this.chb_SF80C21_2.AutoSize = true;
-            this.chb_SF80C21_2.Location = new System.Drawing.Point(487, 15);
-            this.chb_SF80C21_2.Margin = new System.Windows.Forms.Padding(2);
-            this.chb_SF80C21_2.Name = "chb_SF80C21_2";
-            this.chb_SF80C21_2.Size = new System.Drawing.Size(73, 17);
-            this.chb_SF80C21_2.TabIndex = 283;
-            this.chb_SF80C21_2.Text = "SF80C-21";
-            this.chb_SF80C21_2.UseVisualStyleBackColor = true;
+            this.chkSF80C21_2.AutoSize = true;
+            this.chkSF80C21_2.Location = new System.Drawing.Point(487, 15);
+            this.chkSF80C21_2.Margin = new System.Windows.Forms.Padding(2);
+            this.chkSF80C21_2.Name = "chkSF80C21_2";
+            this.chkSF80C21_2.Size = new System.Drawing.Size(73, 17);
+            this.chkSF80C21_2.TabIndex = 283;
+            this.chkSF80C21_2.Text = "SF80C-21";
+            this.chkSF80C21_2.UseVisualStyleBackColor = true;
             // 
             // txtDTS273P3T_2831
             // 
@@ -2509,22 +2525,6 @@
             this.btnReadThau.UseVisualStyleBackColor = true;
             this.btnReadThau.Click += new System.EventHandler(this.btnReadThau_Click);
             // 
-            // rtbTF100m31_Event
-            // 
-            this.rtbTF100m31_Event.Location = new System.Drawing.Point(69, 467);
-            this.rtbTF100m31_Event.Name = "rtbTF100m31_Event";
-            this.rtbTF100m31_Event.Size = new System.Drawing.Size(247, 49);
-            this.rtbTF100m31_Event.TabIndex = 398;
-            this.rtbTF100m31_Event.Text = "";
-            // 
-            // rtbDTS273P3T_Event
-            // 
-            this.rtbDTS273P3T_Event.Location = new System.Drawing.Point(547, 471);
-            this.rtbDTS273P3T_Event.Name = "rtbDTS273P3T_Event";
-            this.rtbDTS273P3T_Event.Size = new System.Drawing.Size(247, 49);
-            this.rtbDTS273P3T_Event.TabIndex = 399;
-            this.rtbDTS273P3T_Event.Text = "";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2620,21 +2620,21 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTF100P31_Seri;
         private System.Windows.Forms.TextBox txtTF100P31_Time;
-        private System.Windows.Forms.TextBox Txt_SF80C21_1_Serial;
-        private System.Windows.Forms.CheckBox checkBox72;
+        private System.Windows.Forms.TextBox txtSF80C21_Seri;
+        private System.Windows.Forms.CheckBox chkDDS26D_2;
         private System.Windows.Forms.CheckBox chkSF80C21;
-        private System.Windows.Forms.TextBox textBox75;
-        private System.Windows.Forms.TextBox textBox74;
-        private System.Windows.Forms.CheckBox checkBox73;
+        private System.Windows.Forms.TextBox txtDDS26D_2_Seri;
+        private System.Windows.Forms.TextBox txtSF80C21_2_180;
+        private System.Windows.Forms.CheckBox chkDDS26D_2_180;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox76;
-        private System.Windows.Forms.TextBox textBox73;
+        private System.Windows.Forms.TextBox txtDDS26D_2_Time;
+        private System.Windows.Forms.TextBox txtSF80C21_2_Time;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox71;
-        private System.Windows.Forms.TextBox textBox77;
-        private System.Windows.Forms.TextBox Tb_SF80C21_2;
+        private System.Windows.Forms.CheckBox chkSF80C21_2_180;
+        private System.Windows.Forms.TextBox txtDDS26D_2_180;
+        private System.Windows.Forms.TextBox txtSF80C21_2_Seri;
         private System.Windows.Forms.CheckBox chkDDS26D;
-        private System.Windows.Forms.CheckBox chb_SF80C21_2;
+        private System.Windows.Forms.CheckBox chkSF80C21_2;
         private System.Windows.Forms.TextBox txtDDS26D_Seri;
         private System.Windows.Forms.CheckBox chkDDS26D_180;
         private System.Windows.Forms.TextBox txtDDS26D_180;
